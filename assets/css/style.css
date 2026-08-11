@@ -578,3 +578,174 @@ kbd {
   }
   html { scroll-behavior: auto; }
 }
+
+/* ===================================================================== *
+ *  Cities: intro screen, background strip, the auto rickshaw art        *
+ * ===================================================================== */
+
+/* ---- the shared rickshaw ------------------------------------------- */
+.rick { width: 100%; height: 100%; overflow: visible; }
+.rick .r-canopy { fill: var(--auto-black); }
+.rick .r-body   { fill: var(--auto-green); }
+.rick .r-band   { fill: var(--auto-yellow); }
+.rick .r-glass  { fill: #7fd7ff; }
+.rick .r-light  { fill: #fff3b0; }
+.rick .tyre     { fill: #181613; }
+.rick .hub      { fill: #c9c4bb; }
+.rick .spoke    { fill: #6f6a5e; }
+.rick .r-shadow { fill: rgba(0,0,0,.28); }
+.rick .r-puff   { fill: #b9b3a4; opacity: 0; }
+
+.rick .wheel { transform-box: fill-box; transform-origin: center; }
+.is-driving .rick .wheel,
+.intro.starting .rick .wheel { animation: rick-spin .5s linear infinite; }
+@keyframes rick-spin { to { transform: rotate(360deg); } }
+
+.is-driving .rick .puff-1 { animation: rick-puff 1.1s ease-out infinite; }
+.is-driving .rick .puff-2 { animation: rick-puff 1.1s ease-out .2s infinite; }
+.is-driving .rick .puff-3 { animation: rick-puff 1.1s ease-out .4s infinite; }
+@keyframes rick-puff {
+  0%   { opacity: .5; transform: translate(0,0) scale(.5); }
+  100% { opacity: 0;  transform: translate(-16px,-14px) scale(1.6); }
+}
+
+/* ---- background strip: skyline + idling/driving auto ---------------- */
+.city-bg {
+  position: fixed; left: 0; right: 0; bottom: 0; height: 122px;
+  z-index: -1; pointer-events: none; overflow: hidden;
+}
+.bg-skyline {
+  position: absolute; left: 50%; bottom: 24px; transform: translateX(-50%);
+  width: min(760px, 96%); height: 92px;
+  color: var(--auto-green); opacity: .22;
+}
+[data-theme="din"] .bg-skyline { color: #b98b3e; opacity: .28; }
+.bg-skyline svg { width: 100%; height: 100%; fill: currentColor; }
+.bg-road {
+  position: absolute; left: 0; right: 0; bottom: 0; height: 24px;
+  background: linear-gradient(var(--auto-black), #000);
+  border-top: 2px solid rgba(255,196,0,.35);
+}
+.bg-road::before {
+  content: ""; position: absolute; left: 0; right: 0; top: 11px; height: 2px;
+  background: repeating-linear-gradient(90deg, var(--auto-yellow) 0 22px, transparent 22px 44px);
+  opacity: .7;
+}
+.bg-rick {
+  position: absolute; bottom: 8px; left: 7%; width: 92px; height: 62px;
+  animation: rick-idle 1.6s ease-in-out infinite;
+}
+@keyframes rick-idle {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-2px); }
+}
+
+/* ---- intro overlay -------------------------------------------------- */
+.intro {
+  position: fixed; inset: 0; z-index: 1000; overflow: hidden;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  padding: 1.4rem;
+  background:
+    radial-gradient(120% 80% at 50% 0%, rgba(255,196,0,.16), transparent 55%),
+    linear-gradient(180deg, #14120c 0%, #1c1811 60%, #0f0d09 100%);
+  transition: opacity .5s ease;
+}
+.intro[hidden] { display: none; }
+/* on start, the text lifts away immediately but the overlay itself only
+   fades once the auto has driven across (delayed transition) */
+.intro.starting { opacity: 0; pointer-events: none; transition: opacity .4s ease 1.05s; }
+
+.intro-inner {
+  position: relative; z-index: 2; text-align: center;
+  width: min(680px, 100%);
+}
+.intro.starting .intro-inner { animation: intro-lift .5s ease forwards; }
+@keyframes intro-lift { to { transform: translateY(-18px); opacity: 0; } }
+
+.intro-kicker {
+  margin: 0 0 .4rem; font-weight: 800; letter-spacing: 1.5px;
+  color: var(--auto-yellow); text-transform: uppercase; font-size: .8rem;
+}
+.intro-title {
+  margin: 0; font-family: var(--font-display); text-transform: uppercase;
+  font-size: clamp(1.6rem, 6vw, 2.8rem); line-height: 1.05; color: var(--text);
+  text-shadow: 2px 2px 0 #000, 4px 4px 0 rgba(255,77,126,.4);
+}
+.intro-sub { margin: .5rem 0 1.3rem; color: var(--text-dim); font-weight: 600; }
+
+.city-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: .6rem;
+  margin-bottom: 1.4rem;
+}
+.city-card {
+  display: flex; flex-direction: column; align-items: center; gap: .35rem;
+  background: var(--panel); color: var(--text-dim);
+  border: 2px solid var(--line); border-radius: 14px;
+  padding: .7rem .5rem .55rem; cursor: pointer;
+  font-family: var(--font-body); font-weight: 700; font-size: .85rem;
+  transition: transform .12s ease, border-color .15s ease, color .15s ease, background-color .15s ease;
+}
+.city-card:hover { transform: translateY(-2px); color: var(--text); border-color: var(--auto-yellow); }
+.city-card[aria-selected="true"] {
+  color: var(--text); border-color: var(--auto-yellow); background: var(--panel-2);
+  box-shadow: 0 0 0 2px var(--auto-yellow) inset, 0 8px 18px rgba(0,0,0,.4);
+}
+.city-sky { width: 100%; height: 46px; color: var(--auto-green-bright); }
+.city-card[aria-selected="true"] .city-sky { color: var(--auto-yellow); }
+.city-sky svg { width: 100%; height: 100%; fill: currentColor; }
+
+.btn-start {
+  font-family: var(--font-display); letter-spacing: 1px; text-transform: uppercase;
+  font-size: 1.15rem; padding: .75rem 1.8rem; border-radius: 999px;
+  background: var(--auto-yellow); color: var(--accent-ink);
+  border: 3px solid #000; box-shadow: 0 5px 0 #8a6b00; cursor: pointer;
+}
+.btn-start:not(:disabled):hover { transform: translateY(-1px); box-shadow: 0 6px 0 #8a6b00; }
+.btn-start:not(:disabled):active { transform: translateY(3px); box-shadow: 0 2px 0 #8a6b00; }
+.btn-start:disabled { opacity: .45; cursor: not-allowed; filter: grayscale(.4); }
+
+.intro-skip {
+  display: block; margin: 1rem auto 0; color: var(--text-dim);
+  font-weight: 600; font-size: .9rem;
+}
+
+.intro-road {
+  position: absolute; left: 0; right: 0; bottom: 0; height: 74px; z-index: 1;
+  background: linear-gradient(var(--auto-black), #000);
+  border-top: 3px solid rgba(255,196,0,.4);
+}
+.intro-road::before {
+  content: ""; position: absolute; left: 0; right: 0; top: 34px; height: 3px;
+  background: repeating-linear-gradient(90deg, var(--auto-yellow) 0 30px, transparent 30px 60px);
+  opacity: .8;
+}
+.intro-rick {
+  position: absolute; bottom: 16px; left: 8%; width: 132px; height: 88px;
+  animation: rick-idle 1.5s ease-in-out infinite;
+}
+/* on start it drives across and off the right edge */
+.intro.starting .intro-rick { animation: intro-drive 1.5s ease-in forwards; }
+@keyframes intro-drive {
+  0%   { left: 8%; }
+  100% { left: 108%; }
+}
+
+/* ---- header city button -------------------------------------------- */
+.btn-city {
+  display: inline-flex; align-items: center; gap: .35rem;
+  font-family: var(--font-body); font-weight: 700; font-size: .85rem;
+  background: var(--panel); color: var(--text-dim);
+  border: 2px solid var(--line); border-radius: 999px;
+  padding: .45rem .8rem; cursor: pointer;
+}
+.btn-city:hover { color: var(--text); border-color: var(--auto-yellow); }
+
+@media (max-width: 620px) {
+  .city-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 560px) {
+  .btn-city #cityName { display: none; }
+}
+@media (max-width: 420px) {
+  .city-grid { grid-template-columns: repeat(2, 1fr); }
+}

@@ -15,7 +15,9 @@
     vol: 'adp:vol',
     last: 'adp:last',
     shuffle: 'adp:shuffle',
-    repeat: 'adp:repeat'
+    repeat: 'adp:repeat',
+    city: 'adp:city',
+    introSeen: 'adp:introSeen'
   };
 
   function read(key, fallback) {
@@ -90,7 +92,16 @@
     empty: $('empty'),
     clearFilters: $('clearFilters'),
     surprise: $('surpriseBtn'),
-    toast: $('toast')
+    toast: $('toast'),
+    intro: $('intro'),
+    cityGrid: $('cityGrid'),
+    startBtn: $('startBtn'),
+    skipIntro: $('skipIntro'),
+    introRick: $('introRick'),
+    bgSkyline: $('bgSkyline'),
+    bgRick: $('bgRick'),
+    cityBtn: $('cityBtn'),
+    cityName: $('cityName')
   };
 
   /* ------------------------------ helpers ---------------------------- */
@@ -289,6 +300,8 @@
   }
 
   function renderTransport() {
+    /* the background auto only drives while music is actually playing */
+    document.documentElement.classList.toggle('is-driving', state.playing);
     el.playIcon.textContent = state.playing ? '⏸' : '▶';
     el.shuffleBtn.setAttribute('aria-pressed', state.shuffle ? 'true' : 'false');
     el.repeatBtn.setAttribute('aria-pressed', state.repeat === 'off' ? 'false' : 'true');
@@ -571,14 +584,19 @@
 
   var audioCtx = null;
 
+  function ensureAudio() {
+    if (!audioCtx) {
+      var Ctx = window.AudioContext || window.webkitAudioContext;
+      if (!Ctx) return null;
+      audioCtx = new Ctx();
+    }
+    if (audioCtx.state === 'suspended') audioCtx.resume();
+    return audioCtx;
+  }
+
   function honk() {
     try {
-      if (!audioCtx) {
-        var Ctx = window.AudioContext || window.webkitAudioContext;
-        if (!Ctx) return;
-        audioCtx = new Ctx();
-      }
-      if (audioCtx.state === 'suspended') audioCtx.resume();
+      if (!ensureAudio()) return;
 
       /* two-tone "pom pom", the way an auto actually sounds */
       [0, 0.22].forEach(function (offset) {
@@ -605,6 +623,76 @@
     el.hornBtn.classList.remove('honking');
     void el.hornBtn.offsetWidth; /* restart the CSS animation */
     el.hornBtn.classList.add('honking');
+  }
+
+  /* synthesised auto-rickshaw start: two struggling cranks, it catches,
+     settles into a putt-putt idle, then the horn. ~1.5s. */
+  function engineStart(done) {
+    var ctx = ensureAudio();
+    if (!ctx) { if (done) setTimeout(done, 100); return; }
+    try {
+      var t0 = ctx.currentTime;
+
+      var master = ctx.createGain();
+      master.gain.setValueAtTime(0.9, t0);
+      master.connect(ctx.destination);
+
+      var lp = ctx.createBiquadFilter();
+      lp.type = 'lowpass';
+      lp.frequency.setValueAtTime(360, t0);
+      lp.frequency.linearRampToValueAtTime(720, t0 + 1.3);
+      lp.connect(master);
+
+      /* the chugging cylinder */
+      var osc = ctx.createOscillator();
+      osc.type = 'sawtooth';
+      osc.frequency.setValueAtTime(22, t0);
+      osc.frequency.linearRampToValueAtTime(30, t0 + 0.5);
+      osc.frequency.exponentialRampToValueAtTime(58, t0 + 1.3);
+
+      var eg = ctx.createGain();
+      osc.connect(eg); eg.connect(lp);
+      /* base envelope: crank, dip, crank, dip, catch, idle */
+      eg.gain.setValueAtTime(0.05, t0);
+      eg.gain.linearRampToValueAtTime(0.28, t0 + 0.18);
+      eg.gain.linearRampToValueAtTime(0.06, t0 + 0.34);
+      eg.gain.linearRampToValueAtTime(0.30, t0 + 0.55);
+      eg.gain.linearRampToValueAtTime(0.10, t0 + 0.72);
+      eg.gain.linearRampToValueAtTime(0.34, t0 + 1.00);
+      eg.gain.setValueAtTime(0.30, t0 + 1.30);
+
+      /* putt-putt: a square LFO added onto the engine gain */
+      var lfo = ctx.createOscillator();
+      lfo.type = 'square';
+      lfo.frequency.setValueAtTime(5, t0);
+      lfo.frequency.linearRampToValueAtTime(16, t0 + 1.3);
+      var lfoGain = ctx.createGain();
+      lfoGain.gain.value = 0.22;
+      lfo.connect(lfoGain); lfoGain.connect(eg.gain);
+
+      /* gritty noise for the cranks + a little idle hiss */
+      var nb = ctx.createBuffer(1, Math.floor(ctx.sampleRate * 1.5), ctx.sampleRate);
+      var d = nb.getChannelData(0);
+      for (var i = 0; i < d.length; i++) d[i] = (Math.random() * 2 - 1) * 0.5;
+      var noise = ctx.createBufferSource(); noise.buffer = nb;
+      var nbp = ctx.createBiquadFilter(); nbp.type = 'bandpass'; nbp.frequency.value = 300; nbp.Q.value = 0.7;
+      var ng = ctx.createGain(); ng.gain.setValueAtTime(0.0001, t0);
+      noise.connect(nbp); nbp.connect(ng); ng.connect(master);
+      [0, 0.34, 0.72].forEach(function (o) {
+        ng.gain.setValueAtTime(0.18, t0 + o);
+        ng.gain.exponentialRampToValueAtTime(0.001, t0 + o + 0.16);
+      });
+      ng.gain.setValueAtTime(0.04, t0 + 1.0);
+
+      osc.start(t0); lfo.start(t0); noise.start(t0);
+      var tEnd = t0 + 1.5;
+      master.gain.setValueAtTime(0.9, t0 + 1.3);
+      master.gain.exponentialRampToValueAtTime(0.001, tEnd);
+      osc.stop(tEnd); lfo.stop(tEnd); noise.stop(tEnd);
+    } catch (e) { /* audio is a nicety, never fatal */ }
+
+    setTimeout(honk, 1150);          /* horn once it catches */
+    if (done) setTimeout(done, 1650);
   }
 
   /* -------------------------------- theme ---------------------------- */
@@ -668,6 +756,10 @@
     el.shareBtn.addEventListener('click', share);
     el.hornBtn.addEventListener('click', honk);
 
+    el.startBtn.addEventListener('click', startFromIntro);
+    el.skipIntro.addEventListener('click', skipIntro);
+    el.cityBtn.addEventListener('click', openIntro);
+
     el.themeBtn.addEventListener('click', function () {
       var now = document.documentElement.getAttribute('data-theme');
       applyTheme(now === 'din' ? 'raat' : 'din');
@@ -727,6 +819,7 @@
 
     /* ------------------------- keyboard ---------------------------- */
     document.addEventListener('keydown', function (e) {
+      if (el.intro && !el.intro.hidden) return; // intro open — swallow shortcuts
       var tag = (e.target.tagName || '').toLowerCase();
       var typing = tag === 'input' || tag === 'textarea' || e.target.isContentEditable;
 
@@ -783,6 +876,87 @@
     }
   }
 
+  /* -------------------------- cities / intro ------------------------- */
+
+  var introCity = null; // highlighted in the picker, applied on start
+
+  function cityByKey(key) {
+    for (var i = 0; i < CITIES.length; i++) {
+      if (CITIES[i].key === key) return CITIES[i];
+    }
+    return null;
+  }
+
+  function applyCity(key) {
+    var c = cityByKey(key) || CITIES[0];
+    el.bgSkyline.innerHTML = svgWrap(c.skyline);
+    el.cityName.textContent = c.name;
+    write(LS.city, c.key);
+  }
+
+  function svgWrap(inner) {
+    return '<svg viewBox="0 0 300 100" preserveAspectRatio="xMidYMax meet">' + inner + '</svg>';
+  }
+
+  function markSelected(key) {
+    introCity = key;
+    var cards = el.cityGrid.querySelectorAll('.city-card');
+    for (var i = 0; i < cards.length; i++) {
+      cards[i].setAttribute('aria-selected', cards[i].getAttribute('data-key') === key ? 'true' : 'false');
+    }
+    el.startBtn.disabled = !key;
+  }
+
+  function buildCityGrid() {
+    el.cityGrid.innerHTML = '';
+    CITIES.forEach(function (c) {
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'city-card';
+      b.setAttribute('data-key', c.key);
+      b.setAttribute('role', 'option');
+      b.setAttribute('aria-selected', 'false');
+      b.innerHTML = '<span class="city-sky">' + svgWrap(c.skyline) + '</span>';
+      var nm = document.createElement('span');
+      nm.textContent = c.name;
+      b.appendChild(nm);
+      b.addEventListener('click', function () { markSelected(c.key); });
+      el.cityGrid.appendChild(b);
+    });
+  }
+
+  function openIntro() {
+    buildCityGrid();
+    var current = read(LS.city, null);
+    markSelected(current && cityByKey(current) ? current : null);
+    el.intro.classList.remove('starting');
+    el.intro.hidden = false;
+    document.documentElement.style.overflow = 'hidden';
+  }
+
+  function hideIntro() {
+    el.intro.hidden = true;
+    el.intro.classList.remove('starting');
+    document.documentElement.style.overflow = '';
+  }
+
+  function pickedCity() {
+    return introCity || read(LS.city, null) || CITIES[0].key;
+  }
+
+  function startFromIntro() {
+    applyCity(pickedCity());
+    write(LS.introSeen, true);
+    el.intro.classList.add('starting'); /* drive across + fade out */
+    engineStart(hideIntro);
+  }
+
+  function skipIntro() {
+    applyCity(pickedCity());
+    write(LS.introSeen, true);
+    hideIntro();
+  }
+
   /* -------------------------------- boot ----------------------------- */
 
   function renderVibes() {
@@ -804,6 +978,17 @@
     renderAll();
     wire();
     loadYouTubeAPI();
+
+    /* the auto art for the intro + the background strip */
+    el.bgRick.innerHTML = RICKSHAW;
+    el.introRick.innerHTML = RICKSHAW;
+
+    var savedCity = read(LS.city, null);
+    applyCity(savedCity && cityByKey(savedCity) ? savedCity : CITIES[0].key);
+
+    /* first-time visitors pick a city and start the auto; everyone else
+       goes straight to the playlist with their city already set */
+    if (!read(LS.introSeen, false)) openIntro();
 
     /* deep link beats "last played" */
     var params = new URLSearchParams(location.search);

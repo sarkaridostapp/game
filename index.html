@@ -21,6 +21,29 @@
 
 <a class="skip-link" href="#playlist">Seedha playlist par jao</a>
 
+<!-- ================= intro: pick a city, start the auto ================== -->
+<div id="intro" class="intro" role="dialog" aria-modal="true" aria-labelledby="introTitle" hidden>
+  <div class="intro-inner">
+    <p class="intro-kicker">🛺 Auto Driver Playlist</p>
+    <h1 id="introTitle" class="intro-title">Kaunse sheher mein chalein?</h1>
+    <p class="intro-sub">Apna sheher chuno, phir auto start karo</p>
+    <div id="cityGrid" class="city-grid" role="listbox" aria-label="Sheher chuno"></div>
+    <button id="startBtn" class="btn btn-start" type="button" disabled>
+      <span aria-hidden="true">🔑</span> Chaabi ghumao
+    </button>
+    <button id="skipIntro" class="linkish intro-skip" type="button">Abhi rehne do, playlist kholo</button>
+  </div>
+  <div class="intro-road" aria-hidden="true">
+    <div id="introRick" class="intro-rick"></div>
+  </div>
+</div>
+
+<!-- ================= background: skyline + driving auto ================== -->
+<div class="city-bg" aria-hidden="true">
+  <div id="bgSkyline" class="bg-skyline"></div>
+  <div class="bg-road"><div id="bgRick" class="bg-rick"></div></div>
+</div>
+
 <!-- ================= decorative jhalar (the hanging fringe) ================ -->
 <div class="jhalar" aria-hidden="true"></div>
 
@@ -57,6 +80,9 @@
     </div>
 
     <div class="header-actions">
+      <button id="cityBtn" class="btn btn-city" type="button" title="Sheher badlo">
+        <span aria-hidden="true">📍</span> <span id="cityName">Sheher</span>
+      </button>
       <button id="hornBtn" class="btn btn-horn" type="button" title="Horn bajao (H)">
         <span aria-hidden="true">📢</span> Horn OK Please
       </button>
@@ -193,6 +219,7 @@
   </div>
 </noscript>
 
+<script src="assets/js/cities.js"></script>
 <script src="assets/js/songs.js"></script>
 <script src="assets/js/app.js"></script>
 </body>
