@@ -75,21 +75,10 @@
     <div class="wrap">
       <div class="deck">
 
-        <!-- video + rear panel ------------------------------------------->
-        <div class="deck-screen">
-          <div class="screen-frame">
-            <div class="screen-holder">
-              <div id="player"></div>
-              <div id="screenIdle" class="screen-idle">
-                <span class="idle-emoji" aria-hidden="true">🛺</span>
-                <p class="idle-title">Chaabi ghumao</p>
-                <p class="idle-sub">Neeche kisi bhi gaane par tap karo</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- the classic back-of-the-auto slogan -->
-          <p class="rear-slogan">Buri Nazar Wale <span>Tera Muh Kala</span></p>
+        <!-- audio-only: the YouTube player is kept off-screen so it can
+             stream sound, but there is no video screen on the page -->
+        <div id="playerHost" class="player-host" aria-hidden="true">
+          <div id="player"></div>
         </div>
 
         <!-- controls ------------------------------------------------------>
@@ -140,6 +129,9 @@
               <span aria-hidden="true">🔗</span><span class="sr-only">Share</span>
             </button>
           </div>
+
+          <!-- the classic back-of-the-auto slogan -->
+          <p class="rear-slogan">Buri Nazar Wale <span>Tera Muh Kala</span></p>
 
         </div>
       </div>

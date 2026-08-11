@@ -60,7 +60,6 @@
   var $ = function (id) { return document.getElementById(id); };
 
   var el = {
-    idle: $('screenIdle'),
     npTitle: $('npTitle'),
     npMeta: $('npMeta'),
     playBtn: $('playBtn'),
@@ -354,7 +353,6 @@
 
     if (e.data === YT.PlayerState.PLAYING) {
       state.playing = true;
-      el.idle.hidden = true;
       startTicker();
     } else if (e.data === YT.PlayerState.PAUSED) {
       state.playing = false;
@@ -411,10 +409,8 @@
 
     if (autoplay) {
       player.loadVideoById(song.yt);
-      el.idle.hidden = true;
     } else {
       player.cueVideoById(song.yt);
-      el.idle.hidden = true;
     }
 
     el.seek.value = 0;

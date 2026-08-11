@@ -217,14 +217,16 @@ body {
 .deck-section { padding: 1.6rem 0 .5rem; }
 
 .deck {
-  display: grid;
-  grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
-  gap: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  max-width: 620px;
+  margin: 0 auto;
   background: var(--panel);
   border: 3px solid var(--auto-black);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
-  padding: 1.1rem;
+  padding: 1.4rem 1.3rem;
   position: relative;
 }
 .deck::before {
@@ -235,49 +237,19 @@ body {
   background: linear-gradient(90deg, var(--auto-green), var(--auto-yellow), var(--auto-pink), var(--auto-yellow), var(--auto-green));
 }
 
-.deck-screen { min-width: 0; }
-
-.screen-frame {
-  background: var(--auto-black);
-  border-radius: 12px;
-  padding: 8px;
-  border: 2px solid var(--line);
-}
-
-.screen-holder {
-  position: relative;
-  aspect-ratio: 16 / 9;
-  border-radius: 8px;
+/* audio-only: the YouTube iframe still loads and plays sound, but it is
+   parked off-screen at 1px so no video is ever shown */
+.player-host {
+  position: absolute;
+  width: 1px; height: 1px;
+  left: -9999px; top: 0;
   overflow: hidden;
-  background: #000;
+  opacity: 0;
+  pointer-events: none;
 }
-.screen-holder iframe {
-  position: absolute; inset: 0;
-  width: 100%; height: 100%; border: 0;
-}
-
-.screen-idle {
-  position: absolute; inset: 0;
-  display: flex; flex-direction: column; align-items: center; justify-content: center;
-  gap: .2rem; text-align: center; padding: 1rem;
-  background:
-    radial-gradient(circle at 50% 40%, rgba(255, 196, 0, .16), transparent 65%),
-    var(--auto-black);
-}
-.screen-idle[hidden] { display: none; }
-.idle-emoji { font-size: 2.6rem; animation: bounce 2.4s ease-in-out infinite; }
-@keyframes bounce {
-  0%, 100% { transform: translateY(0); }
-  50%      { transform: translateY(-7px); }
-}
-.idle-title {
-  margin: .3rem 0 0; font-family: var(--font-display);
-  font-size: 1.25rem; color: var(--auto-yellow); text-transform: uppercase; letter-spacing: 1px;
-}
-.idle-sub { margin: 0; font-size: .85rem; color: #b6ab8d; }
 
 .rear-slogan {
-  margin: .7rem 0 0;
+  margin: 0;
   text-align: center;
   font-family: var(--font-display);
   text-transform: uppercase;
@@ -550,7 +522,6 @@ kbd {
 
 /* ----------------------------- responsive ---------------------------- */
 @media (max-width: 860px) {
-  .deck { grid-template-columns: 1fr; }
   .np-title { font-size: 1.4rem; }
 }
 
