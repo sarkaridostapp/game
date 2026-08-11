@@ -39,15 +39,18 @@
 
   var state = {
     currentId: null,
+    loadedId: null,   // what the YouTube player actually has loaded
     playing: false,
-    mood: 'all',
+    decade: 'all',    // primary chip filter
+    vibe: 'all',      // mood dropdown filter
     query: '',
     shuffle: read(LS.shuffle, false),
     repeat: read(LS.repeat, 'all'), // 'off' | 'all' | 'one'
     favs: read(LS.favs, []),
     broken: {},
     view: SONGS.slice(),
-    seeking: false
+    seeking: false,
+    advancing: false  // guards against double auto-advance at end of track
   };
 
   var player = null;
@@ -80,6 +83,7 @@
     durTime: $('durTime'),
     vol: $('vol'),
     search: $('search'),
+    vibe: $('vibe'),
     chips: $('chips'),
     list: $('songList'),
     count: $('count'),
@@ -100,6 +104,13 @@
 
   function isFav(id) { return state.favs.indexOf(id) !== -1; }
 
+  /* "film · year · singer" — singer is dropped when unknown */
+  function metaLine(song) {
+    var parts = [song.film, String(song.year)];
+    if (song.singer) parts.push(song.singer);
+    return parts.join(' · ');
+  }
+
   function formatTime(secs) {
     if (!isFinite(secs) || secs < 0) secs = 0;
     var m = Math.floor(secs / 60);
@@ -115,9 +126,9 @@
     toastTimer = setTimeout(function () { el.toast.hidden = true; }, ms || 2600);
   }
 
-  function moodLabel(key) {
-    for (var i = 0; i < MOODS.length; i++) {
-      if (MOODS[i].key === key) return MOODS[i].label;
+  function decadeLabel(key) {
+    for (var i = 0; i < DECADES.length; i++) {
+      if (DECADES[i].key === key) return DECADES[i].label;
     }
     return key;
   }
@@ -128,13 +139,18 @@
     var q = state.query.trim().toLowerCase();
 
     state.view = SONGS.filter(function (s) {
-      if (state.mood === 'fav') {
+      /* primary: decade chip (with a special "fav" chip) */
+      if (state.decade === 'fav') {
         if (!isFav(s.id)) return false;
-      } else if (state.mood !== 'all' && s.mood !== state.mood) {
+      } else if (state.decade !== 'all' && s.decade !== state.decade) {
         return false;
       }
+      /* secondary: mood/vibe dropdown */
+      if (state.vibe !== 'all' && s.mood !== state.vibe) return false;
+
       if (!q) return true;
-      var hay = (s.title + ' ' + s.film + ' ' + s.singer + ' ' + s.year).toLowerCase();
+      var hay = (s.title + ' ' + s.film + ' ' + s.singer + ' ' + s.year +
+                 ' ' + s.mood + ' ' + s.cats.join(' ')).toLowerCase();
       return hay.indexOf(q) !== -1;
     });
   }
@@ -143,19 +159,19 @@
 
   function renderChips() {
     el.chips.innerHTML = '';
-    MOODS.forEach(function (m) {
+    DECADES.forEach(function (m) {
       var b = document.createElement('button');
       b.type = 'button';
       b.className = 'chip';
       b.setAttribute('role', 'tab');
-      b.setAttribute('aria-selected', state.mood === m.key ? 'true' : 'false');
+      b.setAttribute('aria-selected', state.decade === m.key ? 'true' : 'false');
       b.innerHTML = '';
       b.appendChild(document.createTextNode(m.label));
       var small = document.createElement('small');
       small.textContent = m.hint;
       b.appendChild(small);
       b.addEventListener('click', function () {
-        state.mood = m.key;
+        state.decade = m.key;
         renderAll();
       });
       el.chips.appendChild(b);
@@ -197,7 +213,7 @@
 
       var meta = document.createElement('span');
       meta.className = 'song-meta';
-      meta.textContent = song.film + ' · ' + song.year + ' · ' + song.singer;
+      meta.textContent = metaLine(song);
       btn.appendChild(meta);
 
       btn.addEventListener('click', function () { play(song.id); });
@@ -208,8 +224,8 @@
       side.className = 'song-side';
 
       var tag = document.createElement('span');
-      tag.className = 'tag tag-' + song.mood;
-      tag.textContent = moodLabel(song.mood);
+      tag.className = 'tag tag-' + song.mood.toLowerCase();
+      tag.textContent = song.mood;
       side.appendChild(tag);
 
       var fav = document.createElement('button');
@@ -246,7 +262,7 @@
     }
 
     el.npTitle.textContent = song.title;
-    el.npMeta.textContent = song.film + ' · ' + song.year + ' · ' + song.singer;
+    el.npMeta.textContent = metaLine(song);
     document.title = song.title + ' — Auto Driver Playlist';
 
     el.favBtn.setAttribute('aria-pressed', isFav(song.id) ? 'true' : 'false');
@@ -365,7 +381,7 @@
         player.playVideo();
         return;
       }
-      next(true);
+      autoNext();
       return;
     }
 
@@ -393,11 +409,17 @@
 
   /* ------------------------------ playback --------------------------- */
 
+  /* search query for tracks that have no hard-coded YouTube id */
+  function searchQuery(song) {
+    return song.title + ' ' + song.film + ' ' + song.year + ' song';
+  }
+
   function startTrack(id, autoplay) {
     var song = songById(id);
     if (!song) return;
 
     state.currentId = id;
+    state.advancing = false;
     write(LS.last, id);
 
     if (!playerReady) {
@@ -407,10 +429,18 @@
       return;
     }
 
-    if (autoplay) {
-      player.loadVideoById(song.yt);
+    if (song.yt) {
+      /* exact video id (the hand-curated tracks) */
+      if (autoplay) player.loadVideoById(song.yt);
+      else player.cueVideoById(song.yt);
+      state.loadedId = id;
+    } else if (autoplay) {
+      /* no id — play the top YouTube search result */
+      player.loadPlaylist({ listType: 'search', list: searchQuery(song) });
+      state.loadedId = id;
     } else {
-      player.cueVideoById(song.yt);
+      /* can't "cue" a search, so just show it; first Play will load it */
+      state.loadedId = null;
     }
 
     el.seek.value = 0;
@@ -428,7 +458,7 @@
   }
 
   function play(id) {
-    if (id === state.currentId && playerReady) {
+    if (id === state.currentId && state.loadedId === id && playerReady) {
       togglePlay();
       return;
     }
@@ -441,6 +471,12 @@
     if (!state.currentId) {
       var first = state.view[0] || SONGS[0];
       if (first) play(first.id);
+      return;
+    }
+
+    /* a cued search track hasn't been loaded yet — load and play it */
+    if (state.loadedId !== state.currentId) {
+      startTrack(state.currentId, true);
       return;
     }
 
@@ -508,6 +544,19 @@
 
   /* ------------------------------- ticker ---------------------------- */
 
+  /* auto-advance to the next track, guarded so it only fires once per song */
+  function autoNext() {
+    if (state.advancing) return;
+    state.advancing = true;
+    if (state.repeat === 'one') {
+      player.seekTo(0, true);
+      player.playVideo();
+      state.advancing = false;
+      return;
+    }
+    next(true);
+  }
+
   function startTicker() {
     stopTicker();
     ticker = setInterval(function () {
@@ -517,6 +566,15 @@
       el.curTime.textContent = formatTime(cur);
       el.durTime.textContent = formatTime(dur);
       el.seek.value = dur ? Math.round((cur / dur) * 1000) : 0;
+
+      /* search-based tracks come as a YouTube search "playlist"; if we let
+         it end, YouTube auto-plays the next search result instead of our
+         next song. So we take over just before the end. Id-based tracks use
+         the reliable ENDED event and are left alone here. */
+      var song = songById(state.currentId);
+      if (song && !song.yt && dur > 0 && cur >= dur - 1.2) {
+        autoNext();
+      }
     }, 500);
   }
 
@@ -659,10 +717,18 @@
       }, 140);
     });
 
+    el.vibe.addEventListener('change', function () {
+      state.vibe = el.vibe.value;
+      computeView();
+      renderList();
+    });
+
     el.clearFilters.addEventListener('click', function () {
-      state.mood = 'all';
+      state.decade = 'all';
+      state.vibe = 'all';
       state.query = '';
       el.search.value = '';
+      if (el.vibe) el.vibe.value = 'all';
       renderAll();
     });
 
@@ -734,10 +800,22 @@
 
   /* -------------------------------- boot ----------------------------- */
 
+  function renderVibes() {
+    el.vibe.innerHTML = '';
+    VIBES.forEach(function (v) {
+      var o = document.createElement('option');
+      o.value = v.key;
+      o.textContent = v.label;
+      el.vibe.appendChild(o);
+    });
+    el.vibe.value = state.vibe;
+  }
+
   function boot() {
     applyTheme(read(LS.theme, 'raat'));
     el.vol.value = read(LS.vol, 80);
 
+    renderVibes();
     renderAll();
     wire();
     loadYouTubeAPI();

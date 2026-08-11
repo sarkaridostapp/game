@@ -1,0 +1,478 @@
+id,title,movie_or_album,year,categories,mood,energy,best_for,language,source_type
+song_0001,Pehla Nasha,Jo Jeeta Wohi Sikandar,1992,90s;Romantic;Evergreen,Romantic,Low,Morning;Night,Hindi,curated_catalog
+song_0002,Ae Mere Humsafar,Baazigar,1993,90s;Romantic,Romantic,Low,Morning;Night,Hindi,curated_catalog
+song_0003,Tu Cheez Badi Hai Mast Mast,Mohra,1994,90s;DJ;Dance,Party,High,Any,Hindi,curated_catalog
+song_0004,Tip Tip Barsa Paani,Mohra,1994,90s;Romantic;Rain,Romantic,Medium,Rainy,Hindi,curated_catalog
+song_0005,Didi Tera Devar Deewana,Hum Aapke Hain Koun,1994,90s;Wedding;Fun,Fun,High,Day,Hindi,curated_catalog
+song_0006,Yeh Kaali Kaali Aankhen,Baazigar,1993,90s;DJ;Dance,Party,High,Any,Hindi,curated_catalog
+song_0007,Chura Ke Dil Mera,Main Khiladi Tu Anari,1994,90s;Romantic,Romantic,Medium,Any,Hindi,curated_catalog
+song_0008,Ole Ole,Yeh Dillagi,1994,90s;DJ;Fun,Fun,High,Any,Hindi,curated_catalog
+song_0009,Ghar Se Nikalte Hi,Papa Kehte Hain,1996,90s;Romantic;Travel,Romantic,Medium,Morning;Evening,Hindi,curated_catalog
+song_0010,Pardesi Pardesi,Raja Hindustani,1996,90s;Sad;Evergreen,Sad,Low,Night,Hindi,curated_catalog
+song_0011,Kitna Pyaara Tujhe Rab Ne Banaya,Raja Hindustani,1996,90s;Romantic,Romantic,Medium,Any,Hindi,curated_catalog
+song_0012,Aaye Ho Meri Zindagi Mein,Raja Hindustani,1996,90s;Romantic,Romantic,Medium,Any,Hindi,curated_catalog
+song_0013,Dheere Dheere Se Meri Zindagi Mein Aana,Aashiqui,1990,90s;Romantic;Evergreen,Romantic,Low,Night,Hindi,curated_catalog
+song_0014,Nazar Ke Saamne,Aashiqui,1990,90s;Romantic,Romantic,Low,Night,Hindi,curated_catalog
+song_0015,Bas Ek Sanam Chahiye,Aashiqui,1990,90s;Romantic,Romantic,Medium,Night,Hindi,curated_catalog
+song_0016,Dil Hai Ki Manta Nahin,Dil Hai Ki Manta Nahin,1991,90s;Travel;Romantic,Travel,Medium,Day,Hindi,curated_catalog
+song_0017,O Mere Sapno Ke Saudagar,Dil Hai Ki Manta Nahin,1991,90s;Romantic,Romantic,Medium,Day,Hindi,curated_catalog
+song_0018,Ek Ladki Ko Dekha,1942: A Love Story,1994,90s;Romantic;Evergreen,Romantic,Low,Evening,Hindi,curated_catalog
+song_0019,Kuch Na Kaho,1942: A Love Story,1994,90s;Romantic,Romantic,Low,Night,Hindi,curated_catalog
+song_0020,Rim Jhim Rim Jhim,1942: A Love Story,1994,90s;Rain;Romantic,Romantic,Low,Rainy;Night,Hindi,curated_catalog
+song_0021,Tum Mile Dil Khile,Criminal,1995,90s;Romantic,Romantic,Low,Night,Hindi,curated_catalog
+song_0022,Mera Dil Bhi Kitna Pagal Hai,Saajan,1991,90s;Romantic,Romantic,Low,Night,Hindi,curated_catalog
+song_0023,Bahut Pyaar Karte Hain,Saajan,1991,90s;Romantic,Romantic,Low,Night,Hindi,curated_catalog
+song_0024,Dekha Hai Pehli Baar,Saajan,1991,90s;Romantic,Romantic,Medium,Any,Hindi,curated_catalog
+song_0025,Jeeye To Jeeye Kaise,Saajan,1991,90s;Sad,Sad,Low,Night,Hindi,curated_catalog
+song_0026,Pehla Pehla Pyar Hai,Hum Aapke Hain Koun,1994,90s;Romantic,Romantic,Medium,Day,Hindi,curated_catalog
+song_0027,Mausam Ka Jaadu,Hum Aapke Hain Koun,1994,90s;Romantic;Fun,Happy,Medium,Day,Hindi,curated_catalog
+song_0028,Joote De Do Paise Le Lo,Hum Aapke Hain Koun,1994,90s;Fun;Wedding,Fun,High,Day,Hindi,curated_catalog
+song_0029,Wah Wah Ramji,Hum Aapke Hain Koun,1994,90s;Fun;Wedding,Fun,High,Day,Hindi,curated_catalog
+song_0030,Tujhe Dekha To Yeh Jaana Sanam,Dilwale Dulhania Le Jayenge,1995,90s;Romantic;Evergreen,Romantic,Medium,Evening,Hindi,curated_catalog
+song_0031,Mere Khwabon Mein,Dilwale Dulhania Le Jayenge,1995,90s;Romantic,Happy,High,Day,Hindi,curated_catalog
+song_0032,Ho Gaya Hai Tujhko To Pyar Sajna,Dilwale Dulhania Le Jayenge,1995,90s;Romantic,Romantic,Medium,Any,Hindi,curated_catalog
+song_0033,Zara Sa Jhoom Loon Main,Dilwale Dulhania Le Jayenge,1995,90s;Fun;Dance,Fun,High,Day,Hindi,curated_catalog
+song_0034,Ruk Ja O Dil Deewane,Dilwale Dulhania Le Jayenge,1995,90s;Dance;Fun,Fun,High,Any,Hindi,curated_catalog
+song_0035,Mehndi Laga Ke Rakhna,Dilwale Dulhania Le Jayenge,1995,90s;Wedding;Dance,Celebration,High,Day,Hindi,curated_catalog
+song_0036,Bholi Si Surat,Dil To Pagal Hai,1997,90s;Romantic;Dance,Happy,High,Day,Hindi,curated_catalog
+song_0037,Dholna,Dil To Pagal Hai,1997,90s;Romantic,Romantic,Medium,Evening,Hindi,curated_catalog
+song_0038,Are Re Are,Dil To Pagal Hai,1997,90s;Romantic,Romantic,Medium,Any,Hindi,curated_catalog
+song_0039,Le Gayi Le Gayi,Dil To Pagal Hai,1997,90s;Dance;DJ,Party,High,Any,Hindi,curated_catalog
+song_0040,Koi Ladki Hai,Dil To Pagal Hai,1997,90s;Dance;Fun,Fun,High,Day,Hindi,curated_catalog
+song_0041,Aankhon Se Tune Kya Keh Diya,Ghulam,1998,90s;Romantic,Romantic,Medium,Evening,Hindi,curated_catalog
+song_0042,Aati Kya Khandala,Ghulam,1998,90s;Fun;Travel,Fun,High,Day,Hindi,curated_catalog
+song_0043,Chaiyya Chaiyya,Dil Se,1998,90s;Travel;DJ;Evergreen,Travel,High,Any,Hindi,curated_catalog
+song_0044,Satrangi Re,Dil Se,1998,90s;Romantic,Romantic,Medium,Evening,Hindi,curated_catalog
+song_0045,Jiya Jale,Dil Se,1998,90s;Romantic,Romantic,Medium,Evening,Hindi,curated_catalog
+song_0046,Dil Se Re,Dil Se,1998,90s;Travel;DJ,Travel,High,Any,Hindi,curated_catalog
+song_0047,Chand Taare,Yes Boss,1997,90s;Romantic;Evergreen,Happy,Medium,Day,Hindi,curated_catalog
+song_0048,Main Koi Aisa Geet Gaoon,Yes Boss,1997,90s;Romantic,Romantic,Low,Evening,Hindi,curated_catalog
+song_0049,Ek Din Aap Yun,Yes Boss,1997,90s;Romantic,Romantic,Low,Evening,Hindi,curated_catalog
+song_0050,Aankhon Mein Base Ho Tum,Takkar,1995,90s;Romantic,Romantic,Low,Night,Hindi,curated_catalog
+song_0051,Humko Sirf Tumse Pyaar Hai,Barsaat,1995,90s;Romantic,Romantic,Medium,Any,Hindi,curated_catalog
+song_0052,Nahin Saamne Tu,Taal,1999,90s;Romantic,Romantic,Low,Night,Hindi,curated_catalog
+song_0053,Ishq Bina,Taal,1999,90s;Romantic,Romantic,Low,Night,Hindi,curated_catalog
+song_0054,Taal Se Taal Mila,Taal,1999,90s;Travel;Romantic,Romantic,Medium,Evening,Hindi,curated_catalog
+song_0055,Ramta Jogi,Taal,1999,90s;Travel;Dance,Travel,High,Day,Hindi,curated_catalog
+song_0056,Zindagi Ek Safar Hai Suhana,Andaz,1971,Evergreen;Travel;Highway,Travel,High,Day,Hindi,curated_catalog
+song_0057,Musafir Hoon Yaaron,Parichay,1972,Evergreen;Travel;Highway,Travel,Medium,Day,Hindi,curated_catalog
+song_0058,Main Zindagi Ka Saath,Hum Dono,1961,Evergreen;Travel,Relaxed,Low,Morning,Hindi,curated_catalog
+song_0059,Mere Sapno Ki Rani,Aradhana,1969,Evergreen;Travel;Romantic,Happy,High,Day,Hindi,curated_catalog
+song_0060,Roop Tera Mastana,Aradhana,1969,Evergreen;Romantic,Romantic,Medium,Night,Hindi,curated_catalog
+song_0061,O Mere Dil Ke Chain,Mere Jeevan Saathi,1972,Evergreen;Romantic,Romantic,Low,Night,Hindi,curated_catalog
+song_0062,Yeh Shaam Mastani,Kati Patang,1971,Evergreen;Travel,Relaxed,Medium,Evening,Hindi,curated_catalog
+song_0063,Pal Pal Dil Ke Paas,Blackmail,1973,Evergreen;Romantic,Romantic,Low,Night,Hindi,curated_catalog
+song_0064,Neele Neele Ambar Par,Kalakaar,1983,Evergreen;Romantic;Night,Relaxed,Low,Night,Hindi,curated_catalog
+song_0065,Chookar Mere Man Ko,Yaarana,1981,Evergreen;Romantic,Romantic,Low,Night,Hindi,curated_catalog
+song_0066,Kya Hua Tera Wada,Hum Kisise Kum Naheen,1977,Evergreen;Sad,Sad,Low,Night,Hindi,curated_catalog
+song_0067,Zindagi Ke Safar Mein,Aap Ki Kasam,1974,Evergreen;Sad;Travel,Reflective,Low,Night,Hindi,curated_catalog
+song_0068,Aanewala Pal,Gol Maal,1979,Evergreen;Travel,Reflective,Low,Evening,Hindi,curated_catalog
+song_0069,Rimjhim Gire Saawan,Manzil,1979,Evergreen;Rain;Romantic,Romantic,Low,Rainy,Hindi,curated_catalog
+song_0070,O Saathi Chal,Seeta Aur Geeta,1972,Evergreen;Travel,Happy,Medium,Day,Hindi,curated_catalog
+song_0071,Pyar Deewana Hota Hai,Kati Patang,1971,Evergreen;Romantic,Romantic,Medium,Any,Hindi,curated_catalog
+song_0072,Humein Tumse Pyaar Kitna,Kudrat,1981,Evergreen;Romantic;Sad,Romantic,Low,Night,Hindi,curated_catalog
+song_0073,Aap Ki Aankhon Mein Kuch,Ghar,1978,Evergreen;Romantic,Romantic,Low,Evening,Hindi,curated_catalog
+song_0074,Gulabi Aankhen,The Train,1970,Evergreen;Romantic;Travel,Happy,Medium,Any,Hindi,curated_catalog
+song_0075,Ek Ajnabee Haseena Se,Ajanabee,1974,Evergreen;Romantic,Romantic,Medium,Evening,Hindi,curated_catalog
+song_0076,O Saathi Re,Muqaddar Ka Sikandar,1978,Evergreen;Sad,Sad,Low,Night,Hindi,curated_catalog
+song_0077,Chura Liya Hai Tumne Jo Dil Ko,Yaadon Ki Baaraat,1973,Evergreen;Romantic,Romantic,Low,Night,Hindi,curated_catalog
+song_0078,Tere Bina Zindagi Se,Aandhi,1975,Evergreen;Sad,Sad,Low,Night,Hindi,curated_catalog
+song_0079,Tum Aa Gaye Ho Noor Aa Gaya,Aandhi,1975,Evergreen;Romantic,Romantic,Low,Evening,Hindi,curated_catalog
+song_0080,Do Lafzon Ki Hai Dil Ki Kahani,The Great Gambler,1979,Evergreen;Romantic;Travel,Romantic,Medium,Evening,Hindi,curated_catalog
+song_0081,Yeh Jo Mohabbat Hai,Kati Patang,1971,Evergreen;Romantic,Romantic,Medium,Evening,Hindi,curated_catalog
+song_0082,Zindagi Pyar Ka Geet Hai,Souten,1983,Evergreen;Romantic,Romantic,Low,Evening,Hindi,curated_catalog
+song_0083,Pyaar Hua Iqraar Hua,Shree 420,1955,Evergreen;Rain;Romantic,Romantic,Low,Rainy,Hindi,curated_catalog
+song_0084,Lag Ja Gale,Woh Kaun Thi?,1964,Evergreen;Romantic,Romantic,Low,Night,Hindi,curated_catalog
+song_0085,Ajeeb Dastan Hai Yeh,Dil Apna Aur Preet Parai,1960,Evergreen;Sad,Reflective,Low,Night,Hindi,curated_catalog
+song_0086,Aaj Phir Jeene Ki Tamanna Hai,Guide,1965,Evergreen;Travel;Happy,Happy,High,Day,Hindi,curated_catalog
+song_0087,Gaata Rahe Mera Dil,Guide,1965,Evergreen;Travel;Romantic,Happy,Medium,Day,Hindi,curated_catalog
+song_0088,Kahin Door Jab Din Dhal Jaye,Anand,1971,Evergreen;Sad;Night,Reflective,Low,Evening,Hindi,curated_catalog
+song_0089,Zindagi Kaisi Hai Paheli,Anand,1971,Evergreen;Reflective,Reflective,Low,Any,Hindi,curated_catalog
+song_0090,Aane Wala Pal,Gol Maal,1979,Evergreen;Travel,Reflective,Low,Evening,Hindi,curated_catalog
+song_0091,Mere Samne Wali Khidki Mein,Padosan,1968,Evergreen;Fun;Romantic,Fun,Medium,Day,Hindi,curated_catalog
+song_0092,Ek Chatur Naar,Padosan,1968,Evergreen;Fun,Fun,High,Day,Hindi,curated_catalog
+song_0093,Khaike Paan Banaraswala,Don,1978,Evergreen;Fun;DJ,Fun,High,Any,Hindi,curated_catalog
+song_0094,Pag Ghunghroo Baandh,Namak Halaal,1982,Evergreen;Dance;DJ,Party,High,Any,Hindi,curated_catalog
+song_0095,Jahan Teri Yeh Nazar Hai,Kaalia,1981,Evergreen;DJ,Party,High,Any,Hindi,curated_catalog
+song_0096,Apni To Jaise Taise,Laawaris,1981,Evergreen;DJ;Fun,Party,High,Any,Hindi,curated_catalog
+song_0097,My Name Is Anthony Gonsalves,Amar Akbar Anthony,1977,Evergreen;Fun,Fun,High,Any,Hindi,curated_catalog
+song_0098,Aaj Rapat Jaayen To,Namak Halaal,1982,Evergreen;Romantic;Rain,Romantic,Medium,Rainy,Hindi,curated_catalog
+song_0099,Jimmy Jimmy Aaja,Disco Dancer,1982,80s;DJ;Dance,Party,High,Any,Hindi,curated_catalog
+song_0100,I Am A Disco Dancer,Disco Dancer,1982,80s;DJ;Dance,Party,High,Any,Hindi,curated_catalog
+song_0101,Auva Auva Koi Yahan Nache,Disco Dancer,1982,80s;DJ;Dance,Party,High,Any,Hindi,curated_catalog
+song_0102,Zooby Zooby,Dance Dance,1987,80s;DJ;Dance,Party,High,Any,Hindi,curated_catalog
+song_0103,Hari Din Toh Gaya,Namak Halaal,1982,80s;Evergreen,Relaxed,Medium,Day,Hindi,curated_catalog
+song_0104,Hawa Hawai,Mr. India,1987,80s;Dance;Fun,Fun,High,Day,Hindi,curated_catalog
+song_0105,Kate Nahin Kat Te,Mr. India,1987,80s;Romantic,Romantic,Medium,Night,Hindi,curated_catalog
+song_0106,Zindagi Ki Yahi Reet Hai,Mr. India,1987,80s;Reflective,Reflective,Low,Any,Hindi,curated_catalog
+song_0107,Tirchi Topiwale,Tridev,1989,80s;DJ;Dance,Party,High,Any,Hindi,curated_catalog
+song_0108,Oye Oye,Tridev,1989,80s;DJ;Dance,Party,High,Any,Hindi,curated_catalog
+song_0109,Gali Gali Mein Phirta Hai,Tridev,1989,80s;DJ,Party,High,Any,Hindi,curated_catalog
+song_0110,So Gaya Yeh Jahan,Tezaab,1988,80s;Night;Sad,Reflective,Low,Night,Hindi,curated_catalog
+song_0111,Ek Do Teen,Tezaab,1988,80s;Dance;DJ,Party,High,Any,Hindi,curated_catalog
+song_0112,Tumko Dekha To Yeh Khayal Aaya,Saath Saath,1982,80s;Romantic,Romantic,Low,Evening,Hindi,curated_catalog
+song_0113,Tum Itna Jo Muskura Rahe Ho,Arth,1982,80s;Sad;Evergreen,Reflective,Low,Night,Hindi,curated_catalog
+song_0114,Huzoor Is Kadar,Masoom,1983,80s;Romantic,Relaxed,Low,Evening,Hindi,curated_catalog
+song_0115,Tujhse Naraz Nahi Zindagi,Masoom,1983,80s;Sad,Reflective,Low,Night,Hindi,curated_catalog
+song_0116,Lakdi Ki Kaathi,Masoom,1983,80s;Fun,Fun,Medium,Day,Hindi,curated_catalog
+song_0117,Hothon Se Jaan Chali Jayegi,Jaani Dushman,1979,Evergreen;Romantic,Romantic,Medium,Night,Hindi,curated_catalog
+song_0118,Pyaar Mein Dil Pe,Mahaan,1983,80s;Romantic,Romantic,Medium,Evening,Hindi,curated_catalog
+song_0119,Inteha Ho Gayi Intezaar Ki,Sharaabi,1984,80s;Sad;Romantic,Sad,Low,Night,Hindi,curated_catalog
+song_0120,De De Pyaar De,Sharaabi,1984,80s;Romantic,Romantic,Medium,Any,Hindi,curated_catalog
+song_0121,Manzilen Apni Jagah Hain,Sharaabi,1984,80s;Travel;Reflective,Reflective,Low,Night,Hindi,curated_catalog
+song_0122,Aye Zindagi Gale Laga Le,Sadma,1983,80s;Sad;Evergreen,Reflective,Low,Night,Hindi,curated_catalog
+song_0123,Surmayee Ankhiyon Mein,Sadma,1983,80s;Romantic,Relaxed,Low,Night,Hindi,curated_catalog
+song_0124,Tum Se Milkar Na Jaane Kyun,Pyar Jhukta Nahin,1985,80s;Romantic,Romantic,Medium,Evening,Hindi,curated_catalog
+song_0125,Aye Dil-E-Nadaan,Razia Sultan,1983,80s;Sad;Evergreen,Reflective,Low,Night,Hindi,curated_catalog
+song_0126,Dil Ke Armaan Aansuon Mein Beh Gaye,Nikaah,1982,80s;Sad,Sad,Low,Night,Hindi,curated_catalog
+song_0127,Chitthi Aayi Hai,Naam,1986,80s;Sad;Driver,Sad,Low,Night,Hindi,curated_catalog
+song_0128,Tu Kal Chala Jayega,Naam,1986,80s;Sad,Sad,Low,Night,Hindi,curated_catalog
+song_0129,Aap Ke Aa Jaane Se,Khudgarz,1987,80s;Dance;Romantic,Happy,High,Any,Hindi,curated_catalog
+song_0130,Jab Chhaye Mera Jadoo,Lootmaar,1980,80s;Dance,Party,High,Any,Hindi,curated_catalog
+song_0131,Pyaar Do Pyaar Lo,Janbaaz,1986,80s;DJ;Dance,Party,High,Any,Hindi,curated_catalog
+song_0132,Har Kisi Ko Nahi Milta,Jaanbaaz,1986,80s;Romantic;Sad,Romantic,Low,Night,Hindi,curated_catalog
+song_0133,Saagar Kinare Dil Yeh Pukare,Saagar,1985,80s;Travel;Romantic,Romantic,Medium,Evening,Hindi,curated_catalog
+song_0134,O Maria,Saagar,1985,80s;Dance,Party,High,Day,Hindi,curated_catalog
+song_0135,Chehra Hai Ya Chand Khila Hai,Saagar,1985,80s;Romantic,Romantic,Low,Night,Hindi,curated_catalog
+song_0136,Keh Doon Tumhe,Deewaar,1975,Evergreen;Romantic,Romantic,Medium,Evening,Hindi,curated_catalog
+song_0137,Meri Bheegi Bheegi Si,Anamika,1973,Evergreen;Sad,Sad,Low,Night,Hindi,curated_catalog
+song_0138,Kuchh To Log Kahenge,Amar Prem,1972,Evergreen;Reflective,Reflective,Low,Night,Hindi,curated_catalog
+song_0139,Yeh Kya Hua,Amar Prem,1972,Evergreen;Romantic,Romantic,Low,Evening,Hindi,curated_catalog
+song_0140,Raat Kali Ek Khwab Mein Aayi,Buddha Mil Gaya,1971,Evergreen;Romantic,Romantic,Medium,Night,Hindi,curated_catalog
+song_0141,O Hansini,Zehreela Insaan,1974,Evergreen;Romantic,Romantic,Low,Evening,Hindi,curated_catalog
+song_0142,Jab Koi Baat Bigad Jaye,Jurm,1990,90s;Romantic;Evergreen,Romantic,Low,Night,Hindi,curated_catalog
+song_0143,Kaho Naa Pyaar Hai,Kaho Naa... Pyaar Hai,2000,2000s;Romantic;Evergreen,Romantic,Medium,Any,Hindi,curated_catalog
+song_0144,Na Tum Jaano Na Hum,Kaho Naa... Pyaar Hai,2000,2000s;Romantic,Romantic,Low,Evening,Hindi,curated_catalog
+song_0145,Pyaar Ki Kashti Mein,Kaho Naa... Pyaar Hai,2000,2000s;Romantic;Travel,Happy,Medium,Day,Hindi,curated_catalog
+song_0146,Ek Pal Ka Jeena,Kaho Naa... Pyaar Hai,2000,2000s;DJ;Dance,Party,High,Any,Hindi,curated_catalog
+song_0147,Aankhon Mein Teri,Om Shanti Om,2007,2000s;Romantic,Romantic,Low,Night,Hindi,curated_catalog
+song_0148,Ajab Si,Om Shanti Om,2007,2000s;Romantic,Romantic,Low,Evening,Hindi,curated_catalog
+song_0149,Main Agar Kahoon,Om Shanti Om,2007,2000s;Romantic,Romantic,Low,Night,Hindi,curated_catalog
+song_0150,Dard-E-Disco,Om Shanti Om,2007,2000s;DJ;Dance,Party,High,Any,Hindi,curated_catalog
+song_0151,Deewangi Deewangi,Om Shanti Om,2007,2000s;DJ;Dance,Party,High,Any,Hindi,curated_catalog
+song_0152,Tum Se Hi,Jab We Met,2007,2000s;Romantic;Travel,Romantic,Medium,Any,Hindi,curated_catalog
+song_0153,Mauja Hi Mauja,Jab We Met,2007,2000s;DJ;Dance,Party,High,Any,Hindi,curated_catalog
+song_0154,Aao Milo Chalo,Jab We Met,2007,2000s;Travel;Highway,Travel,High,Day,Hindi,curated_catalog
+song_0155,Yeh Ishq Hai,Jab We Met,2007,2000s;Dance;Travel,Happy,High,Day,Hindi,curated_catalog
+song_0156,Hum Jo Chalne Lage,Jab We Met,2007,2000s;Travel,Travel,Medium,Day,Hindi,curated_catalog
+song_0157,Zara Zara,Rehnaa Hai Terre Dil Mein,2001,2000s;Romantic,Romantic,Low,Night,Hindi,curated_catalog
+song_0158,Sach Keh Raha Hai Deewana,Rehnaa Hai Terre Dil Mein,2001,2000s;Sad,Sad,Low,Night,Hindi,curated_catalog
+song_0159,Bolo Bolo,Rehnaa Hai Terre Dil Mein,2001,2000s;Romantic,Romantic,Medium,Any,Hindi,curated_catalog
+song_0160,Dil Chahta Hai,Dil Chahta Hai,2001,2000s;Travel;Highway,Travel,High,Day,Hindi,curated_catalog
+song_0161,Tanhayee,Dil Chahta Hai,2001,2000s;Sad,Sad,Low,Night,Hindi,curated_catalog
+song_0162,Jaane Kyun,Dostana,2008,2000s;Romantic,Happy,Medium,Day,Hindi,curated_catalog
+song_0163,Desi Girl,Dostana,2008,2000s;DJ;Dance,Party,High,Any,Hindi,curated_catalog
+song_0164,Khabar Nahi,Dostana,2008,2000s;Romantic,Romantic,Low,Evening,Hindi,curated_catalog
+song_0165,Maa Da Laadla,Dostana,2008,2000s;Fun,Fun,High,Any,Hindi,curated_catalog
+song_0166,Kya Mujhe Pyaar Hai,Woh Lamhe,2006,2000s;Travel;Romantic,Romantic,High,Day,Hindi,curated_catalog
+song_0167,Woh Lamhe Woh Baatein,Zeher,2005,2000s;Sad;Romantic,Sad,Low,Night,Hindi,curated_catalog
+song_0168,Agar Tum Mil Jao,Zeher,2005,2000s;Romantic,Romantic,Low,Night,Hindi,curated_catalog
+song_0169,To Phir Aao,Awarapan,2007,2000s;Sad,Sad,Low,Night,Hindi,curated_catalog
+song_0170,Tera Mera Rishta,Awarapan,2007,2000s;Romantic,Romantic,Low,Night,Hindi,curated_catalog
+song_0171,Maahi,Raaz: The Mystery Continues,2009,2000s;Sad;Romantic,Sad,Low,Night,Hindi,curated_catalog
+song_0172,Soniyo,Raaz: The Mystery Continues,2009,2000s;Romantic,Romantic,Low,Night,Hindi,curated_catalog
+song_0173,Tu Hi Meri Shab Hai,Gangster,2006,2000s;Romantic;Night,Romantic,Low,Night,Hindi,curated_catalog
+song_0174,Ya Ali,Gangster,2006,2000s;Sad;Night,Reflective,Low,Night,Hindi,curated_catalog
+song_0175,Bheegi Bheegi,Gangster,2006,2000s;Rain;Sad,Sad,Low,Rainy,Hindi,curated_catalog
+song_0176,Alvida,Life in a... Metro,2007,2000s;Sad,Sad,Low,Night,Hindi,curated_catalog
+song_0177,O Meri Jaan,Life in a... Metro,2007,2000s;Romantic,Romantic,Low,Evening,Hindi,curated_catalog
+song_0178,In Dino,Life in a... Metro,2007,2000s;Travel;Romantic,Reflective,Medium,Any,Hindi,curated_catalog
+song_0179,Kaho Na Kaho,Murder,2004,2000s;Romantic,Romantic,Medium,Night,Hindi,curated_catalog
+song_0180,Bheege Honth Tere,Murder,2004,2000s;Romantic,Romantic,Low,Night,Hindi,curated_catalog
+song_0181,Jashn-E-Bahaara,Jodhaa Akbar,2008,2000s;Romantic,Romantic,Low,Evening,Hindi,curated_catalog
+song_0182,Kehne Ko Jashn-E-Bahaara,Jodhaa Akbar,2008,2000s;Romantic,Romantic,Low,Evening,Hindi,curated_catalog
+song_0183,In Lamhon Ke Daaman Mein,Jodhaa Akbar,2008,2000s;Romantic,Romantic,Low,Evening,Hindi,curated_catalog
+song_0184,Khuda Jaane,Bachna Ae Haseeno,2008,2000s;Romantic;Travel,Romantic,Medium,Evening,Hindi,curated_catalog
+song_0185,Lucky Boy,Bachna Ae Haseeno,2008,2000s;DJ;Dance,Party,High,Any,Hindi,curated_catalog
+song_0186,Aahista Aahista,Bachna Ae Haseeno,2008,2000s;Romantic,Romantic,Low,Night,Hindi,curated_catalog
+song_0187,Pehli Nazar Mein,Race,2008,2000s;Romantic,Romantic,Medium,Any,Hindi,curated_catalog
+song_0188,Allah Duhai Hai,Race,2008,2000s;DJ;Dance,Party,High,Any,Hindi,curated_catalog
+song_0189,Mujhko Yaad Sataye Teri,Phir Hera Pheri,2006,2000s;Sad,Sad,Low,Night,Hindi,curated_catalog
+song_0190,Aankh Marey,Simmba,2018,2010s;DJ;Dance;Fun,Party,High,Any,Hindi,curated_catalog
+song_0191,Tera Yaar Hoon Main,Sonu Ke Titu Ki Sweety,2018,2010s;Friendship;Emotional,Emotional,Medium,Any,Hindi,curated_catalog
+song_0192,Dil Chori,Sonu Ke Titu Ki Sweety,2018,2010s;DJ;Dance,Party,High,Any,Hindi,curated_catalog
+song_0193,Bom Diggy Diggy,Sonu Ke Titu Ki Sweety,2018,2010s;DJ;Dance,Party,High,Any,Hindi,curated_catalog
+song_0194,Chhote Chhote Peg,Sonu Ke Titu Ki Sweety,2018,2010s;DJ;Dance,Party,High,Night,Hindi,curated_catalog
+song_0195,Kaala Chashma,Baar Baar Dekho,2016,2010s;DJ;Dance,Party,High,Any,Hindi,curated_catalog
+song_0196,Sau Aasmaan,Baar Baar Dekho,2016,2010s;Romantic;Travel,Happy,Medium,Day,Hindi,curated_catalog
+song_0197,Kho Gaye Hum Kahan,Baar Baar Dekho,2016,2010s;Sad;Romantic,Reflective,Low,Night,Hindi,curated_catalog
+song_0198,Kar Gayi Chull,Kapoor & Sons,2016,2010s;DJ;Dance,Party,High,Any,Hindi,curated_catalog
+song_0199,Bolna,Kapoor & Sons,2016,2010s;Romantic,Romantic,Low,Evening,Hindi,curated_catalog
+song_0200,Buddhu Sa Mann,Kapoor & Sons,2016,2010s;Fun,Happy,Medium,Day,Hindi,curated_catalog
+song_0201,Channa Mereya,Ae Dil Hai Mushkil,2016,2010s;Sad;Evergreen,Sad,Low,Night,Hindi,curated_catalog
+song_0202,Bulleya,Ae Dil Hai Mushkil,2016,2010s;DJ;Rock,Intense,High,Night,Hindi,curated_catalog
+song_0203,Ae Dil Hai Mushkil,Ae Dil Hai Mushkil,2016,2010s;Sad;Romantic,Sad,Medium,Night,Hindi,curated_catalog
+song_0204,The Breakup Song,Ae Dil Hai Mushkil,2016,2010s;DJ;Fun,Party,High,Any,Hindi,curated_catalog
+song_0205,Kabira,Yeh Jawaani Hai Deewani,2013,2010s;Travel;Sad,Reflective,Medium,Night,Hindi,curated_catalog
+song_0206,Ilahi,Yeh Jawaani Hai Deewani,2013,2010s;Travel;Highway,Travel,High,Day,Hindi,curated_catalog
+song_0207,Badtameez Dil,Yeh Jawaani Hai Deewani,2013,2010s;DJ;Dance,Party,High,Any,Hindi,curated_catalog
+song_0208,Subhanallah,Yeh Jawaani Hai Deewani,2013,2010s;Romantic,Romantic,Medium,Evening,Hindi,curated_catalog
+song_0209,Dilliwaali Girlfriend,Yeh Jawaani Hai Deewani,2013,2010s;DJ;Dance,Party,High,Any,Hindi,curated_catalog
+song_0210,Balam Pichkari,Yeh Jawaani Hai Deewani,2013,2010s;Festival;DJ,Party,High,Any,Hindi,curated_catalog
+song_0211,Phir Le Aaya Dil,Barfi!,2012,2010s;Sad;Romantic,Sad,Low,Night,Hindi,curated_catalog
+song_0212,Aashiyan,Barfi!,2012,2010s;Romantic,Happy,Medium,Day,Hindi,curated_catalog
+song_0213,Main Kya Karoon,Barfi!,2012,2010s;Romantic,Romantic,Low,Evening,Hindi,curated_catalog
+song_0214,Sunn Raha Hai,Aashiqui 2,2013,2010s;Sad,Sad,Low,Night,Hindi,curated_catalog
+song_0215,Tum Hi Ho,Aashiqui 2,2013,2010s;Romantic;Evergreen,Romantic,Low,Night,Hindi,curated_catalog
+song_0216,Chahun Main Ya Naa,Aashiqui 2,2013,2010s;Romantic,Romantic,Medium,Evening,Hindi,curated_catalog
+song_0217,Hum Mar Jayenge,Aashiqui 2,2013,2010s;Sad,Sad,Low,Night,Hindi,curated_catalog
+song_0218,Bhula Dena,Aashiqui 2,2013,2010s;Sad,Sad,Low,Night,Hindi,curated_catalog
+song_0219,Piya Aaye Na,Aashiqui 2,2013,2010s;Sad,Sad,Low,Night,Hindi,curated_catalog
+song_0220,Tera Ban Jaunga,Kabir Singh,2019,2010s;Romantic,Romantic,Low,Evening,Hindi,curated_catalog
+song_0221,Kaise Hua,Kabir Singh,2019,2010s;Romantic,Romantic,Low,Night,Hindi,curated_catalog
+song_0222,Bekhayali,Kabir Singh,2019,2010s;Sad,Sad,Medium,Night,Hindi,curated_catalog
+song_0223,Tujhe Kitna Chahne Lage,Kabir Singh,2019,2010s;Romantic,Romantic,Low,Night,Hindi,curated_catalog
+song_0224,Mere Sohneya,Kabir Singh,2019,2010s;Romantic,Romantic,Low,Evening,Hindi,curated_catalog
+song_0225,Apna Bana Le,Bhediya,2022,2020s;Romantic,Romantic,Medium,Evening,Hindi,curated_catalog
+song_0226,O Maahi,Dunki,2023,2020s;Romantic;Travel,Romantic,Low,Night,Hindi,curated_catalog
+song_0227,Chaleya,Jawan,2023,2020s;Romantic,Romantic,Medium,Evening,Hindi,curated_catalog
+song_0228,Not Ramaiya Vastavaiya,Jawan,2023,2020s;DJ;Dance,Party,High,Any,Hindi,curated_catalog
+song_0229,Zinda Banda,Jawan,2023,2020s;DJ;Dance,Party,High,Any,Hindi,curated_catalog
+song_0230,Satranga,Animal,2023,2020s;Sad;Romantic,Romantic,Low,Night,Hindi,curated_catalog
+song_0231,Pehle Bhi Main,Animal,2023,2020s;Sad;Romantic,Sad,Low,Night,Hindi,curated_catalog
+song_0232,Arjan Vailly,Animal,2023,2020s;Punjabi;DJ,Intense,High,Any,Hindi,curated_catalog
+song_0233,Tere Vaaste,Zara Hatke Zara Bachke,2023,2020s;Romantic,Romantic,Medium,Day,Hindi,curated_catalog
+song_0234,Heeriye,Single,2023,2020s;Romantic;Punjabi,Romantic,Medium,Any,Hindi,curated_catalog
+song_0235,Husn,Single,2023,2020s;Romantic,Romantic,Low,Night,Hindi,curated_catalog
+song_0236,Maan Meri Jaan,Single,2022,2020s;Romantic,Romantic,Low,Night,Hindi,curated_catalog
+song_0237,Aankhon Se Batana,Single,2022,2020s;Romantic,Romantic,Low,Evening,Hindi,curated_catalog
+song_0238,Kasoor,Single,2020,2020s;Sad;Romantic,Reflective,Low,Night,Hindi,curated_catalog
+song_0239,Gul,Single,2020,2020s;Relaxed,Relaxed,Low,Night,Hindi,curated_catalog
+song_0240,Alag Aasmaan,Single,2020,2020s;Travel;Indie,Travel,Low,Evening,Hindi,curated_catalog
+song_0241,Baarishein,Single,2018,2010s;Rain;Romantic,Romantic,Low,Rainy,Hindi,curated_catalog
+song_0242,Choo Lo,Single,2015,2010s;Romantic;Indie,Romantic,Low,Night,Hindi,curated_catalog
+song_0243,Riha,Single,2019,2010s;Sad;Indie,Reflective,Low,Night,Hindi,curated_catalog
+song_0244,Iktara,Wake Up Sid,2009,2000s;Romantic;Travel,Romantic,Low,Evening,Hindi,curated_catalog
+song_0245,Kya Karoon,Wake Up Sid,2009,2000s;Travel,Travel,Medium,Day,Hindi,curated_catalog
+song_0246,Aaj Din Chadheya,Love Aaj Kal,2009,2000s;Romantic,Romantic,Low,Evening,Hindi,curated_catalog
+song_0247,Twist,Love Aaj Kal,2009,2000s;DJ;Dance,Party,High,Any,Hindi,curated_catalog
+song_0248,Dooriyan,Love Aaj Kal,2009,2000s;Sad,Sad,Low,Night,Hindi,curated_catalog
+song_0249,Chor Bazari,Love Aaj Kal,2009,2000s;Fun;Travel,Fun,High,Day,Hindi,curated_catalog
+song_0250,Ajj Din Chadheya,Love Aaj Kal,2009,2000s;Romantic,Romantic,Low,Evening,Hindi,curated_catalog
+song_0251,Tera Hone Laga Hoon,Ajab Prem Ki Ghazab Kahani,2009,2000s;Romantic,Romantic,Medium,Any,Hindi,curated_catalog
+song_0252,Tu Jaane Na,Ajab Prem Ki Ghazab Kahani,2009,2000s;Sad;Romantic,Sad,Low,Night,Hindi,curated_catalog
+song_0253,Prem Ki Naiyya,Ajab Prem Ki Ghazab Kahani,2009,2000s;Fun,Fun,High,Day,Hindi,curated_catalog
+song_0254,Aa Jao Meri Tamanna,Ajab Prem Ki Ghazab Kahani,2009,2000s;Romantic,Romantic,Low,Evening,Hindi,curated_catalog
+song_0255,Pee Loon,Once Upon a Time in Mumbaai,2010,2010s;Romantic,Romantic,Low,Night,Hindi,curated_catalog
+song_0256,Tum Jo Aaye,Once Upon a Time in Mumbaai,2010,2010s;Romantic,Romantic,Medium,Evening,Hindi,curated_catalog
+song_0257,I Am In Love,Once Upon a Time in Mumbaai,2010,2010s;Romantic,Romantic,Medium,Any,Hindi,curated_catalog
+song_0258,Tujhko Bhulaana,Anjaana Anjaani,2010,2010s;Sad,Sad,Low,Night,Hindi,curated_catalog
+song_0259,Tujhe Bhula Diya,Anjaana Anjaani,2010,2010s;Sad;Evergreen,Sad,Low,Night,Hindi,curated_catalog
+song_0260,Hairat,Anjaana Anjaani,2010,2010s;Travel,Travel,Medium,Day,Hindi,curated_catalog
+song_0261,Aahista,Laila Majnu,2018,2010s;Romantic,Romantic,Low,Night,Hindi,curated_catalog
+song_0262,Hafiz Hafiz,Laila Majnu,2018,2010s;Romantic,Romantic,Low,Evening,Hindi,curated_catalog
+song_0263,Shayad,Love Aaj Kal,2020,2020s;Romantic,Romantic,Low,Night,Hindi,curated_catalog
+song_0264,Haan Main Galat,Love Aaj Kal,2020,2020s;DJ;Dance,Party,High,Any,Hindi,curated_catalog
+song_0265,Mehrama,Love Aaj Kal,2020,2020s;Sad,Sad,Low,Night,Hindi,curated_catalog
+song_0266,Pachtaoge,Single,2019,2010s;Sad,Sad,Low,Night,Hindi,curated_catalog
+song_0267,Filhall,Single,2019,2010s;Sad;Romantic,Sad,Low,Night,Hindi,curated_catalog
+song_0268,Filhall 2 Mohabbat,Single,2021,2020s;Sad;Romantic,Sad,Low,Night,Hindi,curated_catalog
+song_0269,Titliaan,Single,2020,2020s;Sad;Punjabi,Sad,Low,Night,Hindi,curated_catalog
+song_0270,Lehanga,Single,2020,2020s;Punjabi;DJ,Party,High,Any,Hindi,curated_catalog
+song_0271,Lover,Single,2021,2020s;Punjabi;Romantic,Romantic,Medium,Any,Hindi,curated_catalog
+song_0272,Excuses,Single,2021,2020s;Punjabi;Sad,Sad,Medium,Night,Hindi,curated_catalog
+song_0273,Brown Munde,Single,2020,2020s;Punjabi;DJ,Party,High,Any,Hindi,curated_catalog
+song_0274,Insane,Single,2021,2020s;Punjabi;DJ,Party,High,Any,Hindi,curated_catalog
+song_0275,295,Single,2021,2020s;Punjabi;Sad,Reflective,Medium,Night,Hindi,curated_catalog
+song_0276,Amplifier,Single,2009,2000s;Punjabi;DJ,Party,High,Any,Hindi,curated_catalog
+song_0277,Brown Rang,Single,2012,2010s;Punjabi;DJ,Party,High,Any,Hindi,curated_catalog
+song_0278,Dope Shope,Single,2012,2010s;Punjabi;DJ,Party,High,Any,Hindi,curated_catalog
+song_0279,High Rated Gabru,Nawabzaade,2018,2010s;Punjabi;DJ,Party,High,Any,Hindi,curated_catalog
+song_0280,Suit Suit,Hindi Medium,2017,2010s;Punjabi;DJ,Party,High,Any,Hindi,curated_catalog
+song_0281,Laung Laachi,Single,2018,2010s;Punjabi;Romantic,Romantic,Medium,Any,Hindi,curated_catalog
+song_0282,Morni Banke,Badhaai Ho,2018,2010s;Punjabi;Dance,Party,High,Any,Hindi,curated_catalog
+song_0283,Proper Patola,Namaste England,2018,2010s;Punjabi;DJ,Party,High,Any,Hindi,curated_catalog
+song_0284,Lahore,Single,2018,2010s;Punjabi;DJ,Party,High,Any,Hindi,curated_catalog
+song_0285,3 Peg,Single,2016,2010s;Punjabi;DJ,Party,High,Any,Hindi,curated_catalog
+song_0286,Naah,Single,2017,2010s;Punjabi;DJ,Party,High,Any,Hindi,curated_catalog
+song_0287,Kya Baat Ay,Single,2018,2010s;Punjabi;DJ,Party,High,Any,Hindi,curated_catalog
+song_0288,Mundian To Bach Ke,Single,2002,2000s;Punjabi;DJ,Party,High,Any,Hindi,curated_catalog
+song_0289,Tunak Tunak Tun,Single,1998,90s;Punjabi;DJ;Evergreen,Party,High,Any,Hindi,curated_catalog
+song_0290,Made in India,Made in India,1995,90s;Indipop;DJ,Party,High,Any,Hindi,curated_catalog
+song_0291,Gur Nalon Ishq Mitha,Single,1990,90s;Punjabi;DJ,Party,High,Any,Hindi,curated_catalog
+song_0292,Tan Tana Tan,Judwaa,1997,90s;DJ;Dance;Fun,Party,High,Any,Hindi,curated_catalog
+song_0293,Kisi Disco Mein Jaaye,Bade Miyan Chote Miyan,1998,90s;DJ;Dance;Fun,Party,High,Any,Hindi,curated_catalog
+song_0294,What Is Mobile Number,Haseena Maan Jaayegi,1999,90s;DJ;Fun,Fun,High,Any,Hindi,curated_catalog
+song_0295,Husn Hai Suhana,Coolie No. 1,1995,90s;DJ;Dance,Party,High,Any,Hindi,curated_catalog
+song_0296,Sona Kitna Sona Hai,Hero No. 1,1997,90s;DJ;Dance,Party,High,Any,Hindi,curated_catalog
+song_0297,Main Toh Raste Se Ja Raha Tha,Coolie No. 1,1995,90s;Travel;DJ;Fun,Fun,High,Day,Hindi,curated_catalog
+song_0298,Ankhiyon Se Goli Maare,Dulhe Raja,1998,90s;DJ;Fun,Fun,High,Any,Hindi,curated_catalog
+song_0299,Sarkai Lo Khatiya,Raja Babu,1994,90s;DJ;Fun,Fun,High,Any,Hindi,curated_catalog
+song_0300,O O Jaane Jaana,Pyaar Kiya To Darna Kya,1998,90s;DJ;Dance,Party,High,Any,Hindi,curated_catalog
+song_0301,Makhna,Bade Miyan Chote Miyan,1998,90s;DJ;Dance,Party,High,Any,Hindi,curated_catalog
+song_0302,Humko Humise Chura Lo,Mohabbatein,2000,2000s;Romantic;Evergreen,Romantic,Low,Evening,Hindi,curated_catalog
+song_0303,Soni Soni,Mohabbatein,2000,2000s;Romantic;Dance,Romantic,Medium,Any,Hindi,curated_catalog
+song_0304,Aankhein Khuli,Mohabbatein,2000,2000s;Romantic;Dance,Happy,High,Day,Hindi,curated_catalog
+song_0305,Chalte Chalte,Mohabbatein,2000,2000s;Romantic,Romantic,Medium,Evening,Hindi,curated_catalog
+song_0306,Do Pal,Veer-Zaara,2004,2000s;Sad;Romantic,Sad,Low,Night,Hindi,curated_catalog
+song_0307,Tere Liye,Veer-Zaara,2004,2000s;Romantic,Romantic,Low,Evening,Hindi,curated_catalog
+song_0308,Main Yahaan Tu Wahaan,Baghban,2003,2000s;Sad;Evergreen,Sad,Low,Night,Hindi,curated_catalog
+song_0309,Pehle Se,Fareb,1996,90s;Romantic,Romantic,Low,Night,Hindi,curated_catalog
+song_0310,Chand Sifarish,Fanaa,2006,2000s;Romantic,Romantic,Medium,Evening,Hindi,curated_catalog
+song_0311,Mere Haath Mein,Fanaa,2006,2000s;Romantic,Romantic,Low,Evening,Hindi,curated_catalog
+song_0312,Des Rangila,Fanaa,2006,2000s;Patriotic;Dance,Celebration,High,Day,Hindi,curated_catalog
+song_0313,Tere Naina,My Name Is Khan,2010,2010s;Romantic,Romantic,Low,Evening,Hindi,curated_catalog
+song_0314,Sajda,My Name Is Khan,2010,2010s;Romantic,Romantic,Low,Night,Hindi,curated_catalog
+song_0315,Noor-E-Khuda,My Name Is Khan,2010,2010s;Reflective,Reflective,Low,Night,Hindi,curated_catalog
+song_0316,Senorita,Zindagi Na Milegi Dobara,2011,2010s;Travel;Fun,Travel,High,Day,Hindi,curated_catalog
+song_0317,Khaabon Ke Parinday,Zindagi Na Milegi Dobara,2011,2010s;Travel;Highway,Travel,High,Day,Hindi,curated_catalog
+song_0318,Ik Junoon,Zindagi Na Milegi Dobara,2011,2010s;Travel;DJ,Travel,High,Day,Hindi,curated_catalog
+song_0319,Sooraj Ki Baahon Mein,Zindagi Na Milegi Dobara,2011,2010s;Travel;Romantic,Happy,Medium,Day,Hindi,curated_catalog
+song_0320,Der Lagi Lekin,Zindagi Na Milegi Dobara,2011,2010s;Travel,Reflective,Low,Evening,Hindi,curated_catalog
+song_0321,Dil Dhadakne Do,Zindagi Na Milegi Dobara,2011,2010s;Travel;DJ,Travel,High,Day,Hindi,curated_catalog
+song_0322,Zinda,Bhaag Milkha Bhaag,2013,2010s;Motivational;Highway,Motivational,High,Day,Hindi,curated_catalog
+song_0323,Lakshya,Lakshya,2004,2000s;Motivational;Travel,Motivational,High,Day,Hindi,curated_catalog
+song_0324,Yun Hi Chala Chal,Swades,2004,2000s;Travel;Highway;Evergreen,Travel,High,Day,Hindi,curated_catalog
+song_0325,Yeh Jo Des Hai Tera,Swades,2004,2000s;Travel;Reflective,Reflective,Low,Evening,Hindi,curated_catalog
+song_0326,Phir Se Ud Chala,Rockstar,2011,2010s;Travel;Highway,Travel,High,Day,Hindi,curated_catalog
+song_0327,Jo Bhi Main,Rockstar,2011,2010s;Travel,Reflective,Medium,Night,Hindi,curated_catalog
+song_0328,Kun Faya Kun,Rockstar,2011,2010s;Spiritual;Relaxed,Relaxed,Low,Night,Hindi,curated_catalog
+song_0329,Nadaan Parindey,Rockstar,2011,2010s;Travel;Sad,Reflective,Medium,Night,Hindi,curated_catalog
+song_0330,Sadda Haq,Rockstar,2011,2010s;DJ;Motivational,Motivational,High,Day,Hindi,curated_catalog
+song_0331,Patakha Guddi,Highway,2014,2010s;Travel;Highway,Travel,High,Day,Hindi,curated_catalog
+song_0332,Maahi Ve,Highway,2014,2010s;Travel;Romantic,Romantic,Medium,Evening,Hindi,curated_catalog
+song_0333,Wanna Mash Up,Dishoom,2016,2010s;DJ;Dance,Party,High,Any,Hindi,curated_catalog
+song_0334,Sau Tarah Ke,Dishoom,2016,2010s;DJ;Dance,Party,High,Any,Hindi,curated_catalog
+song_0335,Tamma Tamma Again,Badrinath Ki Dulhania,2017,2010s;DJ;Dance,Party,High,Any,Hindi,curated_catalog
+song_0336,Badri Ki Dulhania,Badrinath Ki Dulhania,2017,2010s;DJ;Dance,Party,High,Any,Hindi,curated_catalog
+song_0337,Ainvayi Ainvayi,Band Baaja Baaraat,2010,2010s;Wedding;Dance,Celebration,High,Day,Hindi,curated_catalog
+song_0338,Tainu Leke,Salaam-E-Ishq,2007,2000s;DJ;Dance,Party,High,Any,Hindi,curated_catalog
+song_0339,Nagada Nagada,Jab We Met,2007,2000s;DJ;Dance,Party,High,Any,Hindi,curated_catalog
+song_0340,Pungi,Agent Vinod,2012,2010s;DJ;Fun,Party,High,Any,Hindi,curated_catalog
+song_0341,Dhinka Chika,Ready,2011,2010s;DJ;Dance,Party,High,Any,Hindi,curated_catalog
+song_0342,Character Dheela,Ready,2011,2010s;DJ;Fun,Party,High,Any,Hindi,curated_catalog
+song_0343,Desi Boyz,Desi Boyz,2011,2010s;DJ;Dance,Party,High,Any,Hindi,curated_catalog
+song_0344,Party On My Mind,Race 2,2013,2010s;DJ;Dance,Party,High,Any,Hindi,curated_catalog
+song_0345,Lungi Dance,Chennai Express,2013,2010s;DJ;Fun,Party,High,Any,Hindi,curated_catalog
+song_0346,One Two Three Four,Chennai Express,2013,2010s;DJ;Dance,Party,High,Any,Hindi,curated_catalog
+song_0347,Titli,Chennai Express,2013,2010s;Romantic,Romantic,Medium,Evening,Hindi,curated_catalog
+song_0348,1234 Get on the Dance Floor,Chennai Express,2013,2010s;DJ;Dance,Party,High,Any,Hindi,curated_catalog
+song_0349,Saturday Saturday,Humpty Sharma Ki Dulhania,2014,2010s;DJ;Dance,Party,High,Any,Hindi,curated_catalog
+song_0350,Lucky Tu Lucky Me,Humpty Sharma Ki Dulhania,2014,2010s;DJ;Dance,Party,High,Any,Hindi,curated_catalog
+song_0351,Samjhawan,Humpty Sharma Ki Dulhania,2014,2010s;Romantic,Romantic,Low,Evening,Hindi,curated_catalog
+song_0352,Manma Emotion Jaage Re,Dilwale,2015,2010s;DJ;Dance,Party,High,Any,Hindi,curated_catalog
+song_0353,Gerua,Dilwale,2015,2010s;Romantic,Romantic,Medium,Evening,Hindi,curated_catalog
+song_0354,Janam Janam,Dilwale,2015,2010s;Romantic,Romantic,Low,Night,Hindi,curated_catalog
+song_0355,Tukur Tukur,Dilwale,2015,2010s;Dance;Fun,Fun,High,Day,Hindi,curated_catalog
+song_0356,Cutiepie,Ae Dil Hai Mushkil,2016,2010s;DJ;Dance,Party,High,Any,Hindi,curated_catalog
+song_0357,Nashe Si Chadh Gayi,Befikre,2016,2010s;DJ;Dance,Party,High,Any,Hindi,curated_catalog
+song_0358,Ude Dil Befikre,Befikre,2016,2010s;Travel;DJ,Travel,High,Day,Hindi,curated_catalog
+song_0359,Prem Mein Tohre,Begum Jaan,2017,2010s;Romantic,Romantic,Low,Night,Hindi,curated_catalog
+song_0360,Swag Se Swagat,Tiger Zinda Hai,2017,2010s;DJ;Dance,Party,High,Any,Hindi,curated_catalog
+song_0361,Dil Diyan Gallan,Tiger Zinda Hai,2017,2010s;Romantic,Romantic,Low,Evening,Hindi,curated_catalog
+song_0362,Selfie Le Le Re,Bajrangi Bhaijaan,2015,2010s;Fun;DJ,Fun,High,Day,Hindi,curated_catalog
+song_0363,Aaj Ki Party,Bajrangi Bhaijaan,2015,2010s;DJ;Dance,Party,High,Any,Hindi,curated_catalog
+song_0364,Tu Jo Mila,Bajrangi Bhaijaan,2015,2010s;Sad;Romantic,Romantic,Low,Evening,Hindi,curated_catalog
+song_0365,Zindagi Kuch Toh Bata,Bajrangi Bhaijaan,2015,2010s;Travel;Reflective,Reflective,Low,Evening,Hindi,curated_catalog
+song_0366,Mileya Mileya,Happy Ending,2014,2010s;Dance;Romantic,Happy,High,Day,Hindi,curated_catalog
+song_0367,Galliyan,Ek Villain,2014,2010s;Romantic;Sad,Romantic,Low,Night,Hindi,curated_catalog
+song_0368,Humdard,Ek Villain,2014,2010s;Sad;Romantic,Sad,Low,Night,Hindi,curated_catalog
+song_0369,Banjaara,Ek Villain,2014,2010s;Travel,Travel,Medium,Day,Hindi,curated_catalog
+song_0370,Awari,Ek Villain,2014,2010s;Sad,Sad,Low,Night,Hindi,curated_catalog
+song_0371,Main Phir Bhi Tumko Chahunga,Half Girlfriend,2017,2010s;Sad;Romantic,Sad,Low,Night,Hindi,curated_catalog
+song_0372,Baarish,Half Girlfriend,2017,2010s;Rain;Romantic,Romantic,Low,Rainy,Hindi,curated_catalog
+song_0373,Phir Bhi Tumko Chaahunga,Half Girlfriend,2017,2010s;Sad,Sad,Low,Night,Hindi,curated_catalog
+song_0374,Pal Bhar,Half Girlfriend,2017,2010s;Romantic,Romantic,Low,Evening,Hindi,curated_catalog
+song_0375,Tera Fitoor,Genius,2018,2010s;Romantic,Romantic,Low,Evening,Hindi,curated_catalog
+song_0376,Dil Meri Na Sune,Genius,2018,2010s;Romantic,Romantic,Medium,Any,Hindi,curated_catalog
+song_0377,Tere Sang Yaara,Rustom,2016,2010s;Romantic,Romantic,Low,Evening,Hindi,curated_catalog
+song_0378,Dekha Hazaro Dafaa,Rustom,2016,2010s;Romantic,Romantic,Low,Night,Hindi,curated_catalog
+song_0379,Bol Do Na Zara,Azhar,2016,2010s;Romantic,Romantic,Low,Evening,Hindi,curated_catalog
+song_0380,Itni Si Baat Hain,Azhar,2016,2010s;Romantic,Romantic,Medium,Any,Hindi,curated_catalog
+song_0381,Sanam Re,Sanam Re,2016,2010s;Sad;Romantic,Sad,Low,Night,Hindi,curated_catalog
+song_0382,Humne Pee Rakhi Hai,Sanam Re,2016,2010s;DJ;Dance,Party,High,Any,Hindi,curated_catalog
+song_0383,Gazab Ka Hai Yeh Din,Sanam Re,2016,2010s;Travel,Happy,Medium,Day,Hindi,curated_catalog
+song_0384,Hua Hain Aaj Pehli Baar,Sanam Re,2016,2010s;Romantic,Romantic,Low,Evening,Hindi,curated_catalog
+song_0385,Main Tera Boyfriend,Raabta,2017,2010s;DJ;Dance,Party,High,Any,Hindi,curated_catalog
+song_0386,Ik Vaari Aa,Raabta,2017,2010s;Romantic,Romantic,Low,Evening,Hindi,curated_catalog
+song_0387,Raabta,Agent Vinod,2012,2010s;Romantic;Evergreen,Romantic,Low,Night,Hindi,curated_catalog
+song_0388,Lambiyaan Si Judaiyaan,Raabta,2017,2010s;Sad,Sad,Low,Night,Hindi,curated_catalog
+song_0389,Hawayein,Jab Harry Met Sejal,2017,2010s;Romantic,Romantic,Low,Evening,Hindi,curated_catalog
+song_0390,Butterfly,Jab Harry Met Sejal,2017,2010s;Punjabi;Dance,Party,High,Day,Hindi,curated_catalog
+song_0391,Radha,Jab Harry Met Sejal,2017,2010s;DJ;Dance,Party,High,Any,Hindi,curated_catalog
+song_0392,Phurrr,Jab Harry Met Sejal,2017,2010s;Travel;DJ,Travel,High,Day,Hindi,curated_catalog
+song_0393,Dilbar,Satyameva Jayate,2018,2010s;DJ;Dance,Party,High,Any,Hindi,curated_catalog
+song_0394,Kamariya,Stree,2018,2010s;DJ;Dance,Party,High,Any,Hindi,curated_catalog
+song_0395,Milegi Milegi,Stree,2018,2010s;DJ;Dance,Party,High,Any,Hindi,curated_catalog
+song_0396,Chogada,Loveyatri,2018,2010s;Gujarati;Dance,Celebration,High,Day,Hindi,curated_catalog
+song_0397,Thodi Jagah,Marjaavaan,2019,2010s;Romantic,Romantic,Low,Night,Hindi,curated_catalog
+song_0398,Tum Hi Aana,Marjaavaan,2019,2010s;Sad;Romantic,Sad,Low,Night,Hindi,curated_catalog
+song_0399,Ghungroo,War,2019,2010s;DJ;Dance,Party,High,Any,Hindi,curated_catalog
+song_0400,Jai Jai Shivshankar,War,2019,2010s;DJ;Dance,Party,High,Any,Hindi,curated_catalog
+song_0401,Chal Ghar Chalen,Malang,2020,2020s;Romantic,Romantic,Low,Evening,Hindi,curated_catalog
+song_0402,Humraah,Malang,2020,2020s;Romantic,Romantic,Medium,Any,Hindi,curated_catalog
+song_0403,Malang Title Track,Malang,2020,2020s;Travel;DJ,Travel,High,Day,Hindi,curated_catalog
+song_0404,Aabaad Barbaad,Ludo,2020,2020s;Sad;Romantic,Sad,Low,Night,Hindi,curated_catalog
+song_0405,Hardum Humdum,Ludo,2020,2020s;Romantic,Romantic,Low,Evening,Hindi,curated_catalog
+song_0406,Meri Tum Ho,Ludo,2020,2020s;Romantic,Romantic,Low,Evening,Hindi,curated_catalog
+song_0407,Nadiyon Paar,Roohi,2021,2020s;DJ;Dance,Party,High,Any,Hindi,curated_catalog
+song_0408,Param Sundari,Mimi,2021,2020s;DJ;Dance,Party,High,Any,Hindi,curated_catalog
+song_0409,Doobey,Gehraiyaan,2022,2020s;Romantic;DJ,Romantic,Medium,Night,Hindi,curated_catalog
+song_0410,Beqaaboo,Gehraiyaan,2022,2020s;Romantic,Romantic,Medium,Evening,Hindi,curated_catalog
+song_0411,Rasiya,Brahmastra,2022,2020s;Romantic,Romantic,Low,Evening,Hindi,curated_catalog
+song_0412,Kesariya,Brahmastra,2022,2020s;Romantic;Evergreen,Romantic,Medium,Any,Hindi,curated_catalog
+song_0413,Deva Deva,Brahmastra,2022,2020s;Motivational,Motivational,High,Day,Hindi,curated_catalog
+song_0414,Dance Ka Bhoot,Brahmastra,2022,2020s;DJ;Dance,Party,High,Any,Hindi,curated_catalog
+song_0415,What Jhumka?,Rocky Aur Rani Kii Prem Kahaani,2023,2020s;DJ;Dance,Party,High,Any,Hindi,curated_catalog
+song_0416,Tum Kya Mile,Rocky Aur Rani Kii Prem Kahaani,2023,2020s;Romantic;Rain,Romantic,Medium,Rainy,Hindi,curated_catalog
+song_0417,Ve Kamleya,Rocky Aur Rani Kii Prem Kahaani,2023,2020s;Romantic,Romantic,Low,Night,Hindi,curated_catalog
+song_0418,Dhindhora Baje Re,Rocky Aur Rani Kii Prem Kahaani,2023,2020s;Dance;Celebration,Celebration,High,Day,Hindi,curated_catalog
+song_0419,Jhoome Jo Pathaan,Pathaan,2023,2020s;DJ;Dance,Party,High,Any,Hindi,curated_catalog
+song_0420,Besharam Rang,Pathaan,2023,2020s;DJ;Dance,Party,High,Any,Hindi,curated_catalog
+song_0421,Main Nikla Gaddi Leke,Gadar: Ek Prem Katha,2001,2000s;Travel;Driver;Fun,Travel,High,Day,Hindi,curated_catalog
+song_0422,Udja Kale Kawan,Gadar: Ek Prem Katha,2001,2000s;Travel;Sad,Reflective,Medium,Evening,Hindi,curated_catalog
+song_0423,Koi Kahe Kehta Rahe,Dil Chahta Hai,2001,2000s;DJ;Fun,Party,High,Any,Hindi,curated_catalog
+song_0424,Rock On!!,Rock On!!,2008,2000s;Travel;Rock,Travel,High,Day,Hindi,curated_catalog
+song_0425,Socha Hai,Rock On!!,2008,2000s;Romantic;Travel,Romantic,Medium,Evening,Hindi,curated_catalog
+song_0426,Tum Ho Toh,Rock On!!,2008,2000s;Romantic,Romantic,Low,Night,Hindi,curated_catalog
+song_0427,Sindbad The Sailor,Rock On!!,2008,2000s;Travel;Fun,Travel,High,Day,Hindi,curated_catalog
+song_0428,Uff Teri Adaa,Kartik Calling Kartik,2010,2010s;Romantic,Romantic,Medium,Evening,Hindi,curated_catalog
+song_0429,Hey Ya!,Karthik Calling Karthik,2010,2010s;DJ;Dance,Party,High,Any,Hindi,curated_catalog
+song_0430,Aahun Aahun,Love Aaj Kal,2009,2000s;Punjabi;Dance,Party,High,Any,Hindi,curated_catalog
+song_0431,Soni De Nakhre,Partner,2007,2000s;DJ;Dance,Party,High,Any,Hindi,curated_catalog
+song_0432,Dupatta Tera Nau Rang Da,Partner,2007,2000s;Punjabi;Dance,Party,High,Any,Hindi,curated_catalog
+song_0433,You Get Me Rockin & Reeling,Billu,2009,2000s;DJ;Dance,Party,High,Any,Hindi,curated_catalog
+song_0434,Marjaani,Billu,2009,2000s;Punjabi;Dance,Party,High,Any,Hindi,curated_catalog
+song_0435,Bebo,Kambakkht Ishq,2009,2000s;DJ;Dance,Party,High,Any,Hindi,curated_catalog
+song_0436,Om Mangalam,Kambakkht Ishq,2009,2000s;DJ;Dance,Party,High,Any,Hindi,curated_catalog
+song_0437,Dhan Te Nan,Kaminey,2009,2000s;DJ;Dance,Party,High,Any,Hindi,curated_catalog
+song_0438,Raat Ke Dhai Baje,Kaminey,2009,2000s;Dance,Party,High,Night,Hindi,curated_catalog
+song_0439,Aaja Aaja Dil Nichode,Kaminey,2009,2000s;DJ;Dance,Party,High,Any,Hindi,curated_catalog
+song_0440,Bebo Main Bebo,Kambakkht Ishq,2009,2000s;DJ;Dance,Party,High,Any,Hindi,curated_catalog
+song_0441,Kiss Me Baby,Garam Masala,2005,2000s;DJ;Dance,Party,High,Any,Hindi,curated_catalog
+song_0442,Ada,Garam Masala,2005,2000s;Dance,Party,High,Any,Hindi,curated_catalog
+song_0443,Aaja Nachle,Aaja Nachle,2007,2000s;Dance;DJ,Party,High,Any,Hindi,curated_catalog
+song_0444,Soniye Mil Ja,Aaja Nachle,2007,2000s;Dance,Party,High,Any,Hindi,curated_catalog
+song_0445,It's the Time to Disco,Kal Ho Naa Ho,2003,2000s;DJ;Dance,Party,High,Any,Hindi,curated_catalog
+song_0446,Pretty Woman,Kal Ho Naa Ho,2003,2000s;Romantic;Dance,Happy,High,Day,Hindi,curated_catalog
+song_0447,Kuch To Hua Hai,Kal Ho Naa Ho,2003,2000s;Romantic,Romantic,Medium,Evening,Hindi,curated_catalog
+song_0448,Kal Ho Naa Ho,Kal Ho Naa Ho,2003,2000s;Sad;Evergreen,Reflective,Low,Night,Hindi,curated_catalog
+song_0449,It's Magic,Koi... Mil Gaya,2003,2000s;Dance;Fun,Fun,High,Any,Hindi,curated_catalog
+song_0450,Idhar Chala Main Udhar Chala,Koi... Mil Gaya,2003,2000s;Travel;Fun,Travel,High,Day,Hindi,curated_catalog
+song_0451,Haila Haila,Koi... Mil Gaya,2003,2000s;Dance,Party,High,Any,Hindi,curated_catalog
+song_0452,Kaho Na Pyaar Hai,Kaho Naa... Pyaar Hai,2000,2000s;Romantic,Romantic,Medium,Any,Hindi,curated_catalog
+song_0453,Aap Ki Kashish,Aashiq Banaya Aapne,2005,2000s;Romantic,Romantic,Medium,Night,Hindi,curated_catalog
+song_0454,Aashiq Banaya Aapne,Aashiq Banaya Aapne,2005,2000s;Romantic,Romantic,Medium,Night,Hindi,curated_catalog
+song_0455,Mujhe Pyaar Do,Hulchul,2004,2000s;Romantic,Romantic,Medium,Any,Hindi,curated_catalog
+song_0456,Humko Maaloom Hain,Jaan-E-Mann,2006,2000s;Romantic,Romantic,Low,Night,Hindi,curated_catalog
+song_0457,Ajnabi Shehar,Jaan-E-Mann,2006,2000s;Travel;Sad,Reflective,Low,Night,Hindi,curated_catalog
+song_0458,Jaane Ke Jaane Na,Jaane Tu... Ya Jaane Na,2008,2000s;Romantic,Romantic,Medium,Any,Hindi,curated_catalog
+song_0459,Kabhi Kabhi Aditi,Jaane Tu... Ya Jaane Na,2008,2000s;Fun;Travel,Happy,Medium,Day,Hindi,curated_catalog
+song_0460,Pappu Can't Dance,Jaane Tu... Ya Jaane Na,2008,2000s;Fun;DJ,Fun,High,Any,Hindi,curated_catalog
+song_0461,Tu Bole Main Boloon,Jaane Tu... Ya Jaane Na,2008,2000s;Romantic,Romantic,Medium,Any,Hindi,curated_catalog
+song_0462,Lamha Lamha,Gangster,2006,2000s;Romantic,Romantic,Low,Night,Hindi,curated_catalog
+song_0463,Teri Jhuki Nazar,Murder 3,2013,2010s;Romantic,Romantic,Low,Night,Hindi,curated_catalog
+song_0464,Hum Jee Lenge,Murder 3,2013,2010s;Sad,Sad,Low,Night,Hindi,curated_catalog
+song_0465,I Hate Luv Storys,I Hate Luv Storys,2010,2010s;Fun;Romantic,Fun,Medium,Day,Hindi,curated_catalog
+song_0466,Sadka Kiya,I Hate Luv Storys,2010,2010s;Romantic,Romantic,Medium,Evening,Hindi,curated_catalog
+song_0467,Bin Tere,I Hate Luv Storys,2010,2010s;Sad;Romantic,Sad,Low,Night,Hindi,curated_catalog
+song_0468,Bahara,I Hate Luv Storys,2010,2010s;Romantic,Romantic,Low,Evening,Hindi,curated_catalog
+song_0469,Sajde,Khatta Meetha,2010,2010s;Romantic,Romantic,Low,Evening,Hindi,curated_catalog
+song_0470,Teri Ore,Singh Is Kinng,2008,2000s;Romantic,Romantic,Low,Evening,Hindi,curated_catalog
+song_0471,Jee Karda,Singh Is Kinng,2008,2000s;DJ;Dance,Party,High,Any,Hindi,curated_catalog
+song_0472,Bas Ek Pal,Bas Ek Pal,2006,2000s;Sad;Romantic,Sad,Low,Night,Hindi,curated_catalog
+song_0473,Tere Bin,Bas Ek Pal,2006,2000s;Sad,Sad,Low,Night,Hindi,curated_catalog
+song_0474,Aadat,Kalyug,2005,2000s;Sad;Rock,Sad,Medium,Night,Hindi,curated_catalog
+song_0475,Juda Hoke Bhi,Kalyug,2005,2000s;Sad,Sad,Low,Night,Hindi,curated_catalog
+song_0476,Maine Dil Se Kaha,Rog,2005,2000s;Sad,Reflective,Low,Night,Hindi,curated_catalog
+song_0477,Tanhaai,Dil Chahta Hai,2001,2000s;Sad,Sad,Low,Night,Hindi,curated_catalog

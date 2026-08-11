@@ -370,6 +370,21 @@ input[type="range"]::-moz-range-thumb {
 }
 .search input::placeholder { color: var(--text-dim); }
 
+.vibe-select { display: flex; }
+.vibe-select select {
+  font-family: var(--font-body); font-weight: 700; font-size: .9rem;
+  color: var(--text); background: var(--panel);
+  border: 2px solid var(--line); border-radius: 999px;
+  padding: .55rem 2rem .55rem 1rem; cursor: pointer; outline: none;
+  -webkit-appearance: none; appearance: none;
+  background-image: linear-gradient(45deg, transparent 50%, var(--text-dim) 50%),
+                    linear-gradient(135deg, var(--text-dim) 50%, transparent 50%);
+  background-position: right 1.05rem center, right .8rem center;
+  background-size: 6px 6px, 6px 6px; background-repeat: no-repeat;
+}
+.vibe-select select:focus { border-color: var(--auto-yellow); }
+.vibe-select option { color: #000; }
+
 .chips { display: flex; gap: .45rem; flex-wrap: wrap; margin-bottom: .8rem; }
 
 .chip {
@@ -444,10 +459,19 @@ input[type="range"]::-moz-range-thumb {
   letter-spacing: .8px; padding: .2rem .5rem; border-radius: 99px;
   border: 1.5px solid currentColor;
 }
-.tag-mast     { color: var(--auto-pink); }
-.tag-romantic { color: var(--auto-teal); }
-.tag-dard     { color: #9d8bff; }
-.tag-bonus    { color: var(--auto-green-bright); }
+.tag { color: var(--text-dim); }          /* default for any unlisted mood */
+.tag-party        { color: var(--auto-pink); }
+.tag-romantic     { color: var(--auto-teal); }
+.tag-sad          { color: #9d8bff; }
+.tag-reflective   { color: #8ea2c9; }
+.tag-travel       { color: var(--auto-green-bright); }
+.tag-fun          { color: var(--auto-yellow-deep); }
+.tag-happy        { color: #ffb037; }
+.tag-relaxed      { color: #6fd0c0; }
+.tag-celebration  { color: #ff6f9c; }
+.tag-motivational { color: #7fc98a; }
+.tag-intense      { color: #ff7a5c; }
+.tag-emotional    { color: #c58bff; }
 
 .song-fav {
   background: none; border: 0; cursor: pointer;

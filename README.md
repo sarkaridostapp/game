@@ -5,28 +5,36 @@ A single-page website for the playlist that used to play in every auto rickshaw 
 "truck driver playlist" / "saloon playlist" collections, built as an actual site
 you can open and play.
 
-**39 tracks**, streamed from YouTube. No build step, no dependencies, no backend —
-three static files and it runs.
+**500 tracks**, streamed from YouTube. No dependencies, no backend — static files
+and it runs.
 
 ## What's in it
 
-**The playlist** — 25 songs from the 90s plus 14 bonus tracks from later years,
-sorted into four moods:
+**The playlist** — 500 Hindi songs spanning the 1950s to 2023. 39 are
+hand-curated with exact YouTube video ids; the rest play the top YouTube search
+result for the song (see *Playback* below). Filter along two axes:
 
-| Mood | What it is | Count |
-|------|-----------|-------|
-| Mast Mast | The loud ones — Oonchi Hai Building, Tu Cheez Badi Hai, Choli Ke Peeche | 17 |
-| Romantic | Dhak Dhak, Pehla Nasha, Chura Ke Dil Mera | 5 |
-| Dard Bhare | Raat ke 2 baje — Tadap Tadap, Jab Koi Baat Bigad Jaye | 3 |
-| Bonus | 90s ke baad — Kajra Re through Aankh Marey | 14 |
+- **Decade chips** — 90's, 2000's, 2010's, 2020's, 80's, and Purane Gaane
+  (evergreen classics), plus a Pasandeeda (favourites) chip.
+- **Mood dropdown** — Romantic, Party, Sad, Travel, Fun, Happy, Reflective,
+  Relaxed, Celebration, Motivational, Intense, Emotional.
+
+## Playback
+
+The player is **audio-only** — the YouTube iframe streams sound from off-screen,
+there is no video panel. Tracks with a hard-coded `yt` id load that exact video;
+every other track loads the top result of a YouTube search for
+`title + film + year`, so it usually — but not always — lands on the official
+upload. When a search track nears its end the app takes over and cues the next
+song itself, rather than letting YouTube auto-play the next search result.
 
 **The player**
 
 - Play / pause / next / previous, shuffle, and repeat (off → all → one)
 - Seek bar with elapsed and total time, volume control
 - Auto-advance to the next track when one ends
-- Search across song, film, singer, and year
-- Mood filter chips, plus a **Pasandeeda** (favourites) filter
+- Search across song, film, singer, year, mood, and category
+- Decade chips + a mood dropdown, plus a **Pasandeeda** (favourites) filter
 - "🎲 Koi bhi bajao" — random track from whatever is currently listed
 - **Horn OK Please** button — a two-tone auto horn synthesised with the Web Audio
   API, so there is no sound file to ship
@@ -93,31 +101,44 @@ version query to the tags in `index.html` (`app.js?v=2`).
 
 ## Adding songs
 
-Everything lives in [`assets/js/songs.js`](assets/js/songs.js). Copy a block,
-change the fields:
+The catalog is generated. **Edit the CSV, not `songs.js`.**
 
-```js
-{
-  id: 'oonchi-hai-building',   // unique slug, used for ?song= deep links
-  title: 'Oonchi Hai Building',
-  film: 'Judwaa',
-  year: 1997,
-  singer: 'Abhijeet, Poornima',
-  mood: 'mast',                // mast | romantic | dard | bonus
-  yt: 'gXd94eYUNZk'            // the bit after ?v= in the YouTube URL
-}
-```
+1. Add a row to [`assets/data/catalog.csv`](assets/data/catalog.csv):
 
-To add a whole new mood, add an entry to the `MOODS` array in the same file and
-a `.tag-<key>` colour rule in [`assets/css/style.css`](assets/css/style.css).
+   ```
+   id,title,movie_or_album,year,categories,mood,energy,best_for,language,source_type
+   song_0478,New Song,New Film,2024,2020s;Romantic,Romantic,Low,Night,Hindi,curated_catalog
+   ```
+
+   `categories` and `best_for` are `;`-separated. The `decade` chip is taken
+   from the decade token in `categories` (`90s`, `2000s`, …, `Evergreen`), or
+   derived from `year` if none is present. The `mood` column drives the mood
+   dropdown and the row's colour tag.
+
+2. Regenerate the data:
+
+   ```bash
+   node tools/generate-songs.js
+   ```
+
+This rebuilds [`assets/js/songs.js`](assets/js/songs.js) — 500-odd song objects
+plus the `DECADES` and `VIBES` lists the UI reads. Songs get an empty `yt` and
+play via search; the 39 hand-curated tracks with real ids live in the `CURATED`
+array inside [`tools/generate-songs.js`](tools/generate-songs.js) and are merged
+in (deduplicated on title + film).
+
+To give a specific mood its own tag colour, add a `.tag-<mood>` rule (lowercase)
+in [`assets/css/style.css`](assets/css/style.css).
 
 ## Layout
 
 ```
-index.html              markup
-assets/css/style.css    truck-art styling, both themes, responsive rules
-assets/js/songs.js      the playlist data — edit this to change songs
-assets/js/app.js        player, filtering, favourites, keyboard, horn
+index.html                  markup
+assets/css/style.css        truck-art styling, both themes, responsive rules
+assets/data/catalog.csv     the playlist source data — edit this
+tools/generate-songs.js     builds songs.js from the CSV + curated tracks
+assets/js/songs.js          GENERATED — do not hand-edit
+assets/js/app.js            player, filtering, favourites, keyboard, horn
 ```
 
 ## A note on the music
