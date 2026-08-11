@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Auto Driver Playlist — 90s ke woh gaane jo har auto mein bajte the</title>
+<meta name="description" content="90s Hindi ki woh playlist jo har auto rickshaw mein bajti thi. Oonchi Hai Building se Tadap Tadap tak — chalao, sunno, horn bajao.">
+<meta name="theme-color" content="#12100c">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Auto Driver Playlist">
+<meta property="og:description" content="90s Hindi ki woh playlist jo har auto rickshaw mein bajti thi. Horn OK Please.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Baloo+2:wght@500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛺</text></svg>">
+</head>
+<body>
+
+<a class="skip-link" href="#playlist">Seedha playlist par jao</a>
+
+<!-- ================= decorative jhalar (the hanging fringe) ================ -->
+<div class="jhalar" aria-hidden="true"></div>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+
+    <div class="brand">
+      <span class="brand-auto" aria-hidden="true">
+        <!-- side view of an auto rickshaw -->
+        <svg viewBox="0 0 120 78" role="img">
+          <!-- canopy -->
+          <path d="M30 12c-12 0-21 9-21 21v20h94V37c0-14-9-25-23-25z" fill="var(--auto-black)"/>
+          <!-- body -->
+          <path d="M9 40h94v18a6 6 0 0 1-6 6H15a6 6 0 0 1-6-6z" fill="var(--auto-green)"/>
+          <!-- yellow band -->
+          <rect x="9" y="34" width="94" height="9" fill="var(--auto-yellow)"/>
+          <!-- windscreen -->
+          <path d="M86 16c9 2 14 10 14 20H80V16z" fill="#7fd7ff" opacity=".85"/>
+          <!-- passenger window -->
+          <rect x="24" y="19" width="44" height="15" rx="3" fill="#7fd7ff" opacity=".35"/>
+          <!-- headlight -->
+          <circle cx="99" cy="47" r="4.5" fill="#fff3b0"/>
+          <!-- wheels -->
+          <circle cx="30" cy="64" r="11" fill="#181613"/>
+          <circle cx="30" cy="64" r="4" fill="#c9c4bb"/>
+          <circle cx="94" cy="64" r="11" fill="#181613"/>
+          <circle cx="94" cy="64" r="4" fill="#c9c4bb"/>
+        </svg>
+      </span>
+      <span class="brand-text">
+        <span class="brand-title">Auto Driver Playlist</span>
+        <span class="brand-sub">90s • Hindi • Full Volume</span>
+      </span>
+    </div>
+
+    <div class="header-actions">
+      <button id="hornBtn" class="btn btn-horn" type="button" title="Horn bajao (H)">
+        <span aria-hidden="true">📢</span> Horn OK Please
+      </button>
+      <button id="themeBtn" class="btn btn-icon" type="button" title="Din / Raat" aria-label="Din ya raat mode badlo">
+        <span id="themeIcon" aria-hidden="true">🌙</span>
+      </button>
+    </div>
+
+  </div>
+</header>
+
+<main>
+
+  <!-- ============================ THE DECK ============================= -->
+  <section class="deck-section">
+    <div class="wrap">
+      <div class="deck">
+
+        <!-- video + rear panel ------------------------------------------->
+        <div class="deck-screen">
+          <div class="screen-frame">
+            <div class="screen-holder">
+              <div id="player"></div>
+              <div id="screenIdle" class="screen-idle">
+                <span class="idle-emoji" aria-hidden="true">🛺</span>
+                <p class="idle-title">Chaabi ghumao</p>
+                <p class="idle-sub">Neeche kisi bhi gaane par tap karo</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- the classic back-of-the-auto slogan -->
+          <p class="rear-slogan">Buri Nazar Wale <span>Tera Muh Kala</span></p>
+        </div>
+
+        <!-- controls ------------------------------------------------------>
+        <div class="deck-controls">
+
+          <div class="np">
+            <p class="np-label">Ab Baj Raha Hai</p>
+            <div class="np-marquee">
+              <p id="npTitle" class="np-title">Kuch nahi baj raha</p>
+            </div>
+            <p id="npMeta" class="np-meta">Playlist se koi gaana chuno</p>
+          </div>
+
+          <div class="seek">
+            <span id="curTime" class="time">0:00</span>
+            <input id="seek" class="seek-range" type="range" min="0" max="1000" value="0" step="1"
+                   aria-label="Gaane mein aage peeche jao">
+            <span id="durTime" class="time">0:00</span>
+          </div>
+
+          <div class="buttons">
+            <button id="shuffleBtn" class="btn btn-ghost" type="button" title="Shuffle (S)" aria-pressed="false">
+              <span aria-hidden="true">🔀</span><span class="sr-only">Shuffle</span>
+            </button>
+            <button id="prevBtn" class="btn btn-round" type="button" title="Pichla gaana (P)">
+              <span aria-hidden="true">⏮</span><span class="sr-only">Pichla</span>
+            </button>
+            <button id="playBtn" class="btn btn-play" type="button" title="Play / Pause (Space)">
+              <span id="playIcon" aria-hidden="true">▶</span><span class="sr-only">Play ya pause</span>
+            </button>
+            <button id="nextBtn" class="btn btn-round" type="button" title="Agla gaana (N)">
+              <span aria-hidden="true">⏭</span><span class="sr-only">Agla</span>
+            </button>
+            <button id="repeatBtn" class="btn btn-ghost" type="button" title="Repeat (R)" aria-pressed="false">
+              <span id="repeatIcon" aria-hidden="true">🔁</span><span class="sr-only">Repeat</span>
+            </button>
+          </div>
+
+          <div class="extras">
+            <label class="vol">
+              <span aria-hidden="true">🔊</span>
+              <input id="vol" type="range" min="0" max="100" value="80" aria-label="Awaaz">
+            </label>
+            <button id="favBtn" class="btn btn-ghost" type="button" title="Pasand (F)" aria-pressed="false">
+              <span id="favIcon" aria-hidden="true">☆</span><span class="sr-only">Pasandeeda banao</span>
+            </button>
+            <button id="shareBtn" class="btn btn-ghost" type="button" title="Share">
+              <span aria-hidden="true">🔗</span><span class="sr-only">Share</span>
+            </button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ PLAYLIST ============================= -->
+  <section id="playlist" class="list-section">
+    <div class="wrap">
+
+      <div class="toolbar">
+        <div class="search">
+          <span class="search-icon" aria-hidden="true">🔍</span>
+          <input id="search" type="search" placeholder="Gaana, film ya singer dhoondo…" aria-label="Gaane dhoondo">
+        </div>
+        <button id="surpriseBtn" class="btn btn-solid" type="button">🎲 Koi bhi bajao</button>
+      </div>
+
+      <div id="chips" class="chips" role="tablist" aria-label="Mood chuno"></div>
+
+      <p id="count" class="count" role="status" aria-live="polite"></p>
+
+      <ol id="songList" class="songs"></ol>
+
+      <p id="empty" class="empty" hidden>
+        Kuch nahi mila. <button id="clearFilters" class="linkish" type="button">Sab dikhao</button>
+      </p>
+
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p class="footer-slogan">Horn OK Please</p>
+    <p class="footer-note">
+      Saare gaane YouTube se stream hote hain — hosting yahan kuch nahi hai.
+      Har gaane ka copyright uske asli maalik ka hai.
+    </p>
+    <p class="footer-keys">
+      <strong>Shortcuts:</strong>
+      <kbd>Space</kbd> play/pause · <kbd>N</kbd> agla · <kbd>P</kbd> pichla ·
+      <kbd>S</kbd> shuffle · <kbd>R</kbd> repeat · <kbd>F</kbd> pasand ·
+      <kbd>H</kbd> horn · <kbd>/</kbd> search
+    </p>
+  </div>
+</footer>
+
+<div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+
+<noscript>
+  <div class="wrap noscript">
+    Yeh playlist chalane ke liye JavaScript chalu karna padega.
+  </div>
+</noscript>
+
+<script src="assets/js/songs.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>
