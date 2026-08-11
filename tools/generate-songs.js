@@ -16,7 +16,11 @@ const path = require('path');
 
 const ROOT = path.join(__dirname, '..');
 const CSV = path.join(ROOT, 'assets', 'data', 'catalog.csv');
+const IDMAP = path.join(ROOT, 'assets', 'data', 'yt-ids.json');
 const OUT = path.join(ROOT, 'assets', 'js', 'songs.js');
+
+/* build-time resolved YouTube ids, keyed by CSV song id (see resolve-ids.js) */
+const idMap = fs.existsSync(IDMAP) ? JSON.parse(fs.readFileSync(IDMAP, 'utf8')) : {};
 
 /* ---- the original curated tracks: real yt ids + singers --------------- */
 const CURATED = [
@@ -121,7 +125,7 @@ function push(rec) {
 lines.forEach(function (line) {
   var f = line.split(',');
   // columns: id,title,movie_or_album,year,categories,mood,energy,best_for,language,source_type
-  var title = f[1], film = f[2], year = Number(f[3]);
+  var csvId = f[0], title = f[1], film = f[2], year = Number(f[3]);
   var cats = (f[4] || '').split(';').filter(Boolean);
   var mood = f[5] || 'Other';
   var energy = f[6] || 'Medium';
@@ -142,7 +146,7 @@ lines.forEach(function (line) {
     energy: energy,
     cats: cats,
     best: best,
-    yt: cur ? cur.yt : ''
+    yt: cur ? cur.yt : (idMap[csvId] || '')
   });
 });
 

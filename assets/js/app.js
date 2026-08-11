@@ -376,11 +376,6 @@
     } else if (e.data === YT.PlayerState.ENDED) {
       state.playing = false;
       stopTicker();
-      if (state.repeat === 'one') {
-        player.seekTo(0, true);
-        player.playVideo();
-        return;
-      }
       autoNext();
       return;
     }
@@ -409,11 +404,6 @@
 
   /* ------------------------------ playback --------------------------- */
 
-  /* search query for tracks that have no hard-coded YouTube id */
-  function searchQuery(song) {
-    return song.title + ' ' + song.film + ' ' + song.year + ' song';
-  }
-
   function startTrack(id, autoplay) {
     var song = songById(id);
     if (!song) return;
@@ -429,19 +419,23 @@
       return;
     }
 
-    if (song.yt) {
-      /* exact video id (the hand-curated tracks) */
-      if (autoplay) player.loadVideoById(song.yt);
-      else player.cueVideoById(song.yt);
-      state.loadedId = id;
-    } else if (autoplay) {
-      /* no id — play the top YouTube search result */
-      player.loadPlaylist({ listType: 'search', list: searchQuery(song) });
-      state.loadedId = id;
-    } else {
-      /* can't "cue" a search, so just show it; first Play will load it */
+    /* every song carries a real video id; the rare unresolved one is
+       flagged and skipped rather than leaving the previous track playing */
+    if (!song.yt) {
+      state.broken[song.id] = true;
       state.loadedId = null;
+      renderNowPlaying();
+      renderList();
+      toast('Yeh gaana abhi available nahi — agla laga rahe hain…', 2600);
+      if (autoplay) setTimeout(function () {
+        if (state.currentId === song.id) next(true);
+      }, 700);
+      return;
     }
+
+    if (autoplay) player.loadVideoById(song.yt);
+    else player.cueVideoById(song.yt);
+    state.loadedId = id;
 
     el.seek.value = 0;
     el.curTime.textContent = '0:00';
@@ -566,15 +560,6 @@
       el.curTime.textContent = formatTime(cur);
       el.durTime.textContent = formatTime(dur);
       el.seek.value = dur ? Math.round((cur / dur) * 1000) : 0;
-
-      /* search-based tracks come as a YouTube search "playlist"; if we let
-         it end, YouTube auto-plays the next search result instead of our
-         next song. So we take over just before the end. Id-based tracks use
-         the reliable ENDED event and are left alone here. */
-      var song = songById(state.currentId);
-      if (song && !song.yt && dur > 0 && cur >= dur - 1.2) {
-        autoNext();
-      }
     }, 500);
   }
 

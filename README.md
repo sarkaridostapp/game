@@ -10,9 +10,9 @@ and it runs.
 
 ## What's in it
 
-**The playlist** — 500 Hindi songs spanning the 1950s to 2023. 39 are
-hand-curated with exact YouTube video ids; the rest play the top YouTube search
-result for the song (see *Playback* below). Filter along two axes:
+**The playlist** — 500 Hindi songs spanning the 1950s to 2023, each with a real
+YouTube video id (39 hand-curated, the rest resolved once at build time — see
+*Playback* below). Filter along two axes:
 
 - **Decade chips** — 90's, 2000's, 2010's, 2020's, 80's, and Purane Gaane
   (evergreen classics), plus a Pasandeeda (favourites) chip.
@@ -22,11 +22,12 @@ result for the song (see *Playback* below). Filter along two axes:
 ## Playback
 
 The player is **audio-only** — the YouTube iframe streams sound from off-screen,
-there is no video panel. Tracks with a hard-coded `yt` id load that exact video;
-every other track loads the top result of a YouTube search for
-`title + film + year`, so it usually — but not always — lands on the official
-upload. When a search track nears its end the app takes over and cues the next
-song itself, rather than letting YouTube auto-play the next search result.
+there is no video panel. Every track has a real YouTube video id, so playback is
+a straight `loadVideoById`. YouTube removed search-based loading from its IFrame
+API, so ids can't be resolved in the browser; instead
+[`tools/resolve-ids.js`](tools/resolve-ids.js) looks up each song's top search
+result **once at build time** and bakes the id into the catalog. If a video
+turns out to be un-embeddable, the player flags it and skips to the next song.
 
 **The player**
 
@@ -115,17 +116,20 @@ The catalog is generated. **Edit the CSV, not `songs.js`.**
    derived from `year` if none is present. The `mood` column drives the mood
    dropdown and the row's colour tag.
 
-2. Regenerate the data:
+2. Resolve YouTube ids for any new rows, then rebuild the catalog:
 
    ```bash
-   node tools/generate-songs.js
+   node tools/resolve-ids.js      # fills in ids for songs that lack one
+   node tools/generate-songs.js   # rebuilds assets/js/songs.js
    ```
 
-This rebuilds [`assets/js/songs.js`](assets/js/songs.js) — 500-odd song objects
-plus the `DECADES` and `VIBES` lists the UI reads. Songs get an empty `yt` and
-play via search; the 39 hand-curated tracks with real ids live in the `CURATED`
-array inside [`tools/generate-songs.js`](tools/generate-songs.js) and are merged
-in (deduplicated on title + film).
+`resolve-ids.js` is idempotent — it only looks up songs missing from
+[`assets/data/yt-ids.json`](assets/data/yt-ids.json), so re-runs are cheap.
+`generate-songs.js` rebuilds [`assets/js/songs.js`](assets/js/songs.js) — 500-odd
+song objects plus the `DECADES` and `VIBES` lists the UI reads. The 39
+hand-curated tracks with exact ids live in the `CURATED` array inside
+`generate-songs.js` and are merged in (deduplicated on title + film); their ids
+win over resolved ones.
 
 To give a specific mood its own tag colour, add a `.tag-<mood>` rule (lowercase)
 in [`assets/css/style.css`](assets/css/style.css).
@@ -136,7 +140,9 @@ in [`assets/css/style.css`](assets/css/style.css).
 index.html                  markup
 assets/css/style.css        truck-art styling, both themes, responsive rules
 assets/data/catalog.csv     the playlist source data — edit this
-tools/generate-songs.js     builds songs.js from the CSV + curated tracks
+assets/data/yt-ids.json     resolved YouTube ids (build cache)
+tools/resolve-ids.js        looks up a YouTube id per song (build time)
+tools/generate-songs.js     builds songs.js from the CSV + ids + curated tracks
 assets/js/songs.js          GENERATED — do not hand-edit
 assets/js/app.js            player, filtering, favourites, keyboard, horn
 ```
