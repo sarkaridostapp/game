@@ -29,6 +29,19 @@ API, so ids can't be resolved in the browser; instead
 result **once at build time** and bakes the id into the catalog. If a video
 turns out to be un-embeddable, the player flags it and skips to the next song.
 
+**City intro** — first visit opens a picker: choose a city (Mumbai, Delhi,
+Jaipur, Kolkata, Chennai, Bengaluru, Agra, Noida), tap to start the auto (a
+synthesised engine + horn), and the rickshaw drives across as the playlist is
+revealed. The choice is remembered; a background strip shows the city skyline
+and an auto that drives only while music plays.
+
+**Stations** — one-tap curated playlists (radio style): Subah Sawaari, Din Ki
+Bhaag-Daud, Sham-e-Ishq, Dard Bhare Geet, Highway Raat, Full Volume, 90s
+Nostalgia, Shaadi Special, Punjabi Tadka, Barish. The five time-based ones light
+up as **🔴 Abhi Live** at the matching hour (IST); tapping a station shuffles a
+track from it. Defined in [`assets/js/stations.js`](assets/js/stations.js) as
+predicates over the catalogue.
+
 **The player**
 
 - Play / pause / next / previous, shuffle, and repeat (off → all → one)
@@ -144,7 +157,9 @@ assets/data/yt-ids.json     resolved YouTube ids (build cache)
 tools/resolve-ids.js        looks up a YouTube id per song (build time)
 tools/generate-songs.js     builds songs.js from the CSV + ids + curated tracks
 assets/js/songs.js          GENERATED — do not hand-edit
-assets/js/app.js            player, filtering, favourites, keyboard, horn
+assets/js/cities.js         intro city skylines + shared rickshaw art
+assets/js/stations.js       curated "station" playlists + live-by-time logic
+assets/js/app.js            player, filtering, favourites, keyboard, horn, intro
 ```
 
 ## A note on the music

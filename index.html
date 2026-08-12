@@ -164,6 +164,21 @@
     </div>
   </section>
 
+  <!-- ============================ STATIONS ============================ -->
+  <section class="stations-section">
+    <div class="wrap">
+      <div class="stations-head">
+        <h2 class="stations-title">🎚️ Stations</h2>
+        <button id="liveBtn" class="live-btn" type="button" title="Abhi ka station chalao">
+          <span class="live-dot" aria-hidden="true"></span>
+          Abhi Live: <b id="liveName">—</b>
+          <span class="live-play" aria-hidden="true">▶</span>
+        </button>
+      </div>
+      <div id="stationRow" class="station-row" role="list" aria-label="Ready playlists"></div>
+    </div>
+  </section>
+
   <!-- ============================ PLAYLIST ============================= -->
   <section id="playlist" class="list-section">
     <div class="wrap">
@@ -220,6 +235,7 @@
 </noscript>
 
 <script src="assets/js/cities.js"></script>
+<script src="assets/js/stations.js"></script>
 <script src="assets/js/songs.js"></script>
 <script src="assets/js/app.js"></script>
 </body>

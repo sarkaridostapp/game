@@ -45,6 +45,7 @@
     playing: false,
     decade: 'all',    // primary chip filter
     vibe: 'all',      // mood dropdown filter
+    station: null,    // active curated station (overrides decade/vibe)
     query: '',
     shuffle: read(LS.shuffle, false),
     repeat: read(LS.repeat, 'all'), // 'off' | 'all' | 'one'
@@ -101,7 +102,10 @@
     bgSkyline: $('bgSkyline'),
     bgRick: $('bgRick'),
     cityBtn: $('cityBtn'),
-    cityName: $('cityName')
+    cityName: $('cityName'),
+    stationRow: $('stationRow'),
+    liveBtn: $('liveBtn'),
+    liveName: $('liveName')
   };
 
   /* ------------------------------ helpers ---------------------------- */
@@ -148,16 +152,22 @@
 
   function computeView() {
     var q = state.query.trim().toLowerCase();
+    var st = state.station ? stationByKey(state.station) : null;
 
     state.view = SONGS.filter(function (s) {
-      /* primary: decade chip (with a special "fav" chip) */
-      if (state.decade === 'fav') {
-        if (!isFav(s.id)) return false;
-      } else if (state.decade !== 'all' && s.decade !== state.decade) {
-        return false;
+      if (st) {
+        /* a station overrides the decade/mood filters entirely */
+        if (!st.test(s)) return false;
+      } else {
+        /* primary: decade chip (with a special "fav" chip) */
+        if (state.decade === 'fav') {
+          if (!isFav(s.id)) return false;
+        } else if (state.decade !== 'all' && s.decade !== state.decade) {
+          return false;
+        }
+        /* secondary: mood/vibe dropdown */
+        if (state.vibe !== 'all' && s.mood !== state.vibe) return false;
       }
-      /* secondary: mood/vibe dropdown */
-      if (state.vibe !== 'all' && s.mood !== state.vibe) return false;
 
       if (!q) return true;
       var hay = (s.title + ' ' + s.film + ' ' + s.singer + ' ' + s.year +
@@ -183,10 +193,61 @@
       b.appendChild(small);
       b.addEventListener('click', function () {
         state.decade = m.key;
+        state.station = null;   /* chips and stations are alternative filters */
         renderAll();
       });
       el.chips.appendChild(b);
     });
+  }
+
+  function renderStations() {
+    var live = liveStation();
+    el.liveName.textContent = live ? live.name : 'Koi nahi';
+
+    el.stationRow.innerHTML = '';
+    STATIONS.forEach(function (st) {
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'station-card' + (live && live.key === st.key ? ' is-live' : '');
+      b.setAttribute('role', 'listitem');
+      b.setAttribute('aria-pressed', state.station === st.key ? 'true' : 'false');
+      b.innerHTML =
+        '<span class="station-live"><span class="dot"></span>Live</span>' +
+        '<span class="station-emoji" aria-hidden="true">' + st.emoji + '</span>' +
+        '<span class="station-name"></span>' +
+        '<span class="station-hint"></span>';
+      b.querySelector('.station-name').textContent = st.name;
+      b.querySelector('.station-hint').textContent = st.hint;
+      b.addEventListener('click', function () {
+        if (state.station === st.key) clearStation();
+        else selectStation(st.key, true);
+      });
+      el.stationRow.appendChild(b);
+    });
+  }
+
+  /* pick a station: it becomes the filter, and (radio-style) a random track
+     from it starts playing */
+  function selectStation(key, autoplay) {
+    var st = stationByKey(key);
+    if (!st) return;
+    state.station = key;
+    state.decade = 'all';
+    state.vibe = 'all';
+    state.query = '';
+    el.search.value = '';
+    if (el.vibe) el.vibe.value = 'all';
+    renderAll();
+    toast(st.emoji + ' ' + st.name);
+    if (autoplay && state.view.length) {
+      var pick = state.view[Math.floor(Math.random() * state.view.length)];
+      play(pick.id);
+    }
+  }
+
+  function clearStation() {
+    state.station = null;
+    renderAll();
   }
 
   function renderList() {
@@ -312,6 +373,7 @@
   function renderAll() {
     computeView();
     renderChips();
+    renderStations();
     renderList();
     renderNowPlaying();
     renderTransport();
@@ -796,13 +858,20 @@
 
     el.vibe.addEventListener('change', function () {
       state.vibe = el.vibe.value;
-      computeView();
-      renderList();
+      state.station = null;
+      renderAll();
+    });
+
+    el.liveBtn.addEventListener('click', function () {
+      var live = liveStation();
+      if (live) selectStation(live.key, true);
+      else toast('Abhi koi station live nahi hai');
     });
 
     el.clearFilters.addEventListener('click', function () {
       state.decade = 'all';
       state.vibe = 'all';
+      state.station = null;
       state.query = '';
       el.search.value = '';
       if (el.vibe) el.vibe.value = 'all';
@@ -978,6 +1047,9 @@
     renderAll();
     wire();
     loadYouTubeAPI();
+
+    /* keep the "Abhi Live" station current as the clock rolls over */
+    setInterval(renderStations, 60000);
 
     /* the auto art for the intro + the background strip */
     el.bgRick.innerHTML = RICKSHAW;

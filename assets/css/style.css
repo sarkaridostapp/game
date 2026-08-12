@@ -580,6 +580,75 @@ kbd {
 }
 
 /* ===================================================================== *
+ *  Stations: one-tap curated playlists + "Abhi Live" bar                *
+ * ===================================================================== */
+.stations-section { padding: .4rem 0 .2rem; }
+
+.stations-head {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: .8rem; flex-wrap: wrap; margin-bottom: .7rem;
+}
+.stations-title {
+  margin: 0; font-family: var(--font-display); text-transform: uppercase;
+  letter-spacing: 1px; font-size: 1.15rem; color: var(--text);
+}
+.live-btn {
+  display: inline-flex; align-items: center; gap: .45rem;
+  font-family: var(--font-body); font-weight: 700; font-size: .85rem;
+  background: var(--panel); color: var(--text);
+  border: 2px solid var(--line); border-radius: 999px;
+  padding: .4rem .8rem; cursor: pointer;
+}
+.live-btn:hover { border-color: var(--auto-yellow); }
+.live-btn b { color: var(--auto-yellow); }
+.live-play { color: var(--auto-green-bright); font-size: .8rem; }
+.live-dot {
+  width: 9px; height: 9px; border-radius: 50%; background: #ff3b30;
+  box-shadow: 0 0 0 0 rgba(255,59,48,.6); animation: live-pulse 1.8s ease-out infinite;
+}
+@keyframes live-pulse {
+  0%   { box-shadow: 0 0 0 0 rgba(255,59,48,.6); }
+  70%  { box-shadow: 0 0 0 7px rgba(255,59,48,0); }
+  100% { box-shadow: 0 0 0 0 rgba(255,59,48,0); }
+}
+
+.station-row {
+  display: flex; gap: .6rem; overflow-x: auto; padding-bottom: .5rem;
+  scroll-snap-type: x proximity; -webkit-overflow-scrolling: touch;
+}
+.station-row::-webkit-scrollbar { height: 6px; }
+.station-row::-webkit-scrollbar-thumb { background: var(--line); border-radius: 99px; }
+
+.station-card {
+  flex: 0 0 auto; width: 150px; scroll-snap-align: start;
+  display: flex; flex-direction: column; gap: .15rem; text-align: left;
+  background: var(--panel); color: var(--text);
+  border: 2px solid var(--line); border-left: 6px solid var(--auto-green);
+  border-radius: 14px; padding: .7rem .8rem; cursor: pointer; position: relative;
+  transition: transform .12s ease, border-color .15s ease, background-color .15s ease;
+}
+.station-card:hover { transform: translateY(-2px); border-color: var(--auto-yellow); }
+.station-card[aria-pressed="true"] {
+  background: var(--panel-2); border-color: var(--auto-yellow);
+  box-shadow: 0 0 0 2px var(--auto-yellow) inset;
+}
+.station-emoji { font-size: 1.5rem; line-height: 1; }
+.station-name { font-family: var(--font-display); letter-spacing: .5px; font-size: 1rem; }
+.station-hint { color: var(--text-dim); font-size: .74rem; font-weight: 600; }
+.station-live {
+  position: absolute; top: .5rem; right: .55rem;
+  display: none; align-items: center; gap: .25rem;
+  font-size: .6rem; font-weight: 800; text-transform: uppercase;
+  color: #ff3b30; letter-spacing: .5px;
+}
+.station-card.is-live .station-live { display: inline-flex; }
+.station-card.is-live { border-left-color: #ff3b30; }
+.station-live .dot {
+  width: 6px; height: 6px; border-radius: 50%; background: #ff3b30;
+  animation: live-pulse 1.8s ease-out infinite;
+}
+
+/* ===================================================================== *
  *  Cities: intro screen, background strip, the auto rickshaw art        *
  * ===================================================================== */
 
